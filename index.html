@@ -1,1 +1,882 @@
-hola
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asesoría CT | Asesorías Contables y Tributarias - Próximamente</title>
+  <meta name="description" content="Estamos construyendo una nueva plataforma para brindar soluciones contables, tributarias y financieras de alto nivel a empresas y profesionales. Próximamente en asesoriact.com.">
+  <meta name="keywords" content="asesoría contable, tributaria, impuestos, balances, nómina, finanzas, contadores, auditoría">
+  <meta name="theme-color" content="#090d16">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Asesoría CT | Próximamente">
+  <meta property="og:description" content="Impulsamos la claridad y solidez contable y tributaria de tu negocio. Muy pronto estrenamos sitio web.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://asesoriact.com">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230f172a'/><path d='M25 65 L40 35 L55 55 L75 25' stroke='%2338bdf8' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' fill='none'/><circle cx='75' cy='25' r='6' fill='%2310b981'/></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #070a12;
+      --bg-card: rgba(16, 24, 40, 0.65);
+      --bg-card-hover: rgba(24, 34, 58, 0.85);
+      --border-card: rgba(255, 255, 255, 0.08);
+      --border-card-hover: rgba(56, 189, 248, 0.35);
+      --text-main: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-dark: #0284c7;
+      --accent: #10b981;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 8px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Ambient background glows */
+    .bg-glow {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(140px);
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.45;
+      animation: floatGlow 14s ease-in-out infinite alternate;
+    }
+    .glow-1 {
+      top: -150px;
+      left: 10%;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, #0284c7 0%, rgba(2, 132, 199, 0) 70%);
+    }
+    .glow-2 {
+      bottom: -100px;
+      right: 5%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, #0f766e 0%, rgba(15, 118, 110, 0) 70%);
+      animation-duration: 18s;
+      animation-delay: -5s;
+    }
+    .glow-3 {
+      top: 40%;
+      left: 60%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #4338ca 0%, rgba(67, 56, 202, 0) 70%);
+      animation-duration: 20s;
+      animation-delay: -8s;
+    }
+
+    /* Grid overlay */
+    .bg-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes floatGlow {
+      0% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(35px) scale(1.08); }
+      100% { transform: translateY(-25px) scale(0.95); }
+    }
+
+    /* Layout Container */
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(16, 185, 129, 0.2));
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
+    }
+
+    .brand-name {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name .main-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(120deg, #ffffff 40%, #bae6fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-name .sub-title {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #34d399;
+      backdrop-filter: blur(8px);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      position: relative;
+    }
+
+    .status-dot::after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: rgba(16, 185, 129, 0.6);
+      animation: pulseDot 2s ease-out infinite;
+    }
+
+    @keyframes pulseDot {
+      0% { transform: scale(0.6); opacity: 1; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    /* Main Content */
+    main {
+      padding: 3rem 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pill-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 100px;
+      color: #7dd3fc;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      max-width: 880px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, #ffffff 20%, #38bdf8 65%, #34d399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .hero-desc {
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      color: var(--text-secondary);
+      max-width: 720px;
+      margin-bottom: 3rem;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    /* Countdown Timer */
+    .countdown-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      backdrop-filter: blur(16px);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.5rem;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 3.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 80px;
+    }
+
+    .countdown-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+      text-shadow: 0 2px 10px rgba(56, 189, 248, 0.3);
+    }
+
+    .countdown-lbl {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+    }
+
+    .countdown-divider {
+      font-size: 2.2rem;
+      color: rgba(255, 255, 255, 0.2);
+      font-weight: 300;
+      margin-top: -10px;
+      user-select: none;
+    }
+
+    /* Services Grid */
+    .services-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #94a3b8;
+      margin-bottom: 1.8rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      margin-bottom: 3.5rem;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 1.5rem;
+      text-align: left;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #38bdf8, #10b981);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-card-hover);
+      background: var(--bg-card-hover);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      color: #38bdf8;
+    }
+
+    .service-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Notification & Actions Form */
+    .action-panel {
+      width: 100%;
+      max-width: 680px;
+      background: linear-gradient(180deg, rgba(22, 33, 56, 0.8) 0%, rgba(13, 20, 36, 0.9) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .action-panel h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+    }
+
+    .action-panel p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .subscribe-form {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    .subscribe-input {
+      flex: 1;
+      padding: 0.85rem 1.2rem;
+      background: rgba(10, 15, 29, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-sm);
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    .subscribe-input:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+      background: rgba(10, 15, 29, 1);
+    }
+
+    .subscribe-btn {
+      padding: 0.85rem 1.6rem;
+      background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+    }
+
+    .subscribe-btn:hover {
+      background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
+    }
+
+    .contact-urgency {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(37, 211, 102, 0.12);
+      border: 1px solid rgba(37, 211, 102, 0.35);
+      color: #25d366;
+      padding: 8px 18px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: all 0.25s ease;
+    }
+
+    .whatsapp-btn:hover {
+      background: rgba(37, 211, 102, 0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+    }
+
+    .email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #7dd3fc;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .email-link:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0f172a;
+      border: 1px solid #10b981;
+      color: #ffffff;
+      padding: 1rem 1.75rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 100;
+      font-size: 0.92rem;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 2rem 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-right span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem 1rem;
+      }
+      header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+      .countdown-container {
+        gap: 1rem;
+        padding: 1.5rem 1rem;
+        width: 100%;
+      }
+      .countdown-item {
+        min-width: 60px;
+      }
+      .countdown-divider {
+        font-size: 1.5rem;
+      }
+      .subscribe-form {
+        flex-direction: column;
+      }
+      .subscribe-btn {
+        justify-content: center;
+        width: 100%;
+      }
+      footer {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Light Effects -->
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+  <div class="bg-glow glow-3"></div>
+  <div class="bg-grid"></div>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <a href="/" class="brand" title="Asesoría CT">
+        <div class="brand-icon">
+          <!-- Monogram / Balance / Chart Icon -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3v18h18" />
+            <path d="m7 15 4-5 4 3 6-7" />
+            <circle cx="21" cy="6" r="2" fill="#10b981" stroke="none" />
+          </svg>
+        </div>
+        <div class="brand-name">
+          <span class="main-title">Asesoría CT</span>
+          <span class="sub-title">Contable &bull; Tributaria &bull; Financiera</span>
+        </div>
+      </a>
+
+      <div class="badge-status">
+        <span class="status-dot"></span>
+        <span>En Construcción</span>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <div class="pill-hero">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+        <span>Próximamente &bull; Nueva Plataforma Digital</span>
+      </div>
+
+      <h1 class="hero-title">
+        Construyendo la mejor versión de tu <span class="gradient-text">tranquilidad financiera</span>
+      </h1>
+
+      <p class="hero-desc">
+        Estamos creando un portal moderno para brindarte asesoría contable, tributaria y laboral integral. Soluciones estratégicas con rigor normativo, transparencia y acompañamiento continuo para impulsar tu negocio.
+      </p>
+
+      <!-- Countdown -->
+      <div class="countdown-container">
+        <div class="countdown-item">
+          <span class="countdown-val" id="days">00</span>
+          <span class="countdown-lbl">Días</span>
+        </div>
+        <span class="countdown-divider">:</span>
+        <div class="countdown-item">
+          <span class="countdown-val" id="hours">00</span>
+          <span class="countdown-lbl">Horas</span>
+        </div>
+        <span class="countdown-divider">:</span>
+        <div class="countdown-item">
+          <span class="countdown-val" id="minutes">00</span>
+          <span class="countdown-lbl">Minutos</span>
+        </div>
+        <span class="countdown-divider">:</span>
+        <div class="countdown-item">
+          <span class="countdown-val" id="seconds">00</span>
+          <span class="countdown-lbl">Segundos</span>
+        </div>
+      </div>
+
+      <!-- Preview of services -->
+      <span class="services-title">Nuestras áreas de especialidad</span>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+              <path d="M6 6h10"></path>
+              <path d="M6 10h10"></path>
+              <path d="M6 14h6"></path>
+            </svg>
+          </div>
+          <h3>Asesoría Contable</h3>
+          <p>Teneduría de libros, estados financieros periódicos y control riguroso bajo normativas vigentes.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+              <path d="m9 8 6 4-6 4Z"></path>
+            </svg>
+          </div>
+          <h3>Gestión Tributaria</h3>
+          <p>Planeación fiscal eficiente, declaración oportuna de impuestos y prevención de sanciones legales.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3>Nómina y Laboral</h3>
+          <p>Liquidación exacta de sueldos, aportes a seguridad social, contratos y cumplimiento ante entes reguladores.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+          </div>
+          <h3>Auditoría y Consultoría</h3>
+          <p>Diagnósticos empresariales, control interno, evaluación de riesgos y optimización de rentabilidad.</p>
+        </div>
+      </div>
+
+      <!-- Subscription & Urgent Contact -->
+      <div class="action-panel">
+        <h2>¿Quieres ser el primero en saber cuándo estemos listos?</h2>
+        <p>Déjanos tu correo y te notificaremos inmediatamente el día de nuestro lanzamiento oficial.</p>
+
+        <form class="subscribe-form" id="notifyForm">
+          <input 
+            type="email" 
+            class="subscribe-input" 
+            id="emailInput" 
+            placeholder="Introduce tu correo electrónico..." 
+            required
+            autocomplete="email"
+          >
+          <button type="submit" class="subscribe-btn">
+            <span>Avisarme</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </form>
+
+        <div class="contact-urgency">
+          <span>¿Requieres atención o asesoría inmediata?</span>
+          <a href="https://wa.me/?text=Hola%2C%20quisiera%20recibir%20asesor%C3%ADa%20contable%20y%20tributaria." target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+            <!-- WhatsApp SVG -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            <span>WhatsApp</span>
+          </a>
+          <span>o escríbenos a <a href="mailto:contacto@asesoriact.com" class="email-link">contacto@asesoriact.com</a></span>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-left">
+        <span>&copy; <span id="currentYear"></span> <strong>Asesoría CT</strong>. Todos los derechos reservados.</span>
+      </div>
+      <div class="footer-right">
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Precisión y Confianza
+        </span>
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          Disponibilidad Inmediata
+        </span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Toast Confirmation -->
+  <div class="toast" id="toast">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <div>
+      <strong>¡Suscripción confirmada!</strong>
+      <p style="font-size: 0.8rem; color: #94a3b8; margin: 0;">Te avisaremos tan pronto como nuestro portal esté en línea.</p>
+    </div>
+  </div>
+
+  <script>
+    // Dynamic Year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Target launch date: 30 days from now
+    const storageKey = 'launch_target_date';
+    let targetTime = localStorage.getItem(storageKey);
+    if (!targetTime) {
+      const now = new Date();
+      now.setDate(now.getDate() + 25);
+      now.setHours(10, 0, 0, 0);
+      targetTime = now.getTime();
+      localStorage.setItem(storageKey, targetTime);
+    } else {
+      targetTime = parseInt(targetTime, 10);
+    }
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetTime - now;
+
+      if (distance <= 0) {
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Form Handling
+    const form = document.getElementById('notifyForm');
+    const emailInput = document.getElementById('emailInput');
+    const toast = document.getElementById('toast');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = emailInput.value.trim();
+
+      if (email) {
+        // Save to local storage demo
+        const emails = JSON.parse(localStorage.getItem('subscribed_emails') || '[]');
+        emails.push({ email: email, date: new Date().toISOString() });
+        localStorage.setItem('subscribed_emails', JSON.stringify(emails));
+
+        emailInput.value = '';
+
+        // Show toast
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 4500);
+      }
+    });
+  </script>
+</body>
+</html>
