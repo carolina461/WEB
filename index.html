@@ -194,12 +194,26 @@
       width: 46px;
       height: 46px;
       border-radius: 12px;
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(16, 185, 129, 0.2));
-      border: 1px solid rgba(56, 189, 248, 0.4);
+      overflow: hidden;
+      background: #02122c;
+      border: 1px solid rgba(212, 175, 55, 0.35);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), 0 0 12px rgba(212, 175, 55, 0.15);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .brand:hover .brand-icon {
+      transform: scale(1.05);
+      border-color: rgba(212, 175, 55, 0.6);
+    }
+
+    .brand-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .brand-name {
@@ -261,6 +275,166 @@
     @keyframes pulseDot {
       0% { transform: scale(0.6); opacity: 1; }
       100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    /* ========================================================
+       Logotipo Corporativo Animado - Asesoría CT
+       ======================================================== */
+    .corporate-logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 0 auto 2.25rem auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Entrada suave: fade-in y scale de 0.9 a 1 al cargar */
+    .corporate-logo-card {
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transform: scale(0.9);
+      animation: logoFadeInScale 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+    }
+
+    @keyframes logoFadeInScale {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Resplandor ambiental de fondo para realzar la paleta dorada */
+    .logo-ambient-glow {
+      position: absolute;
+      width: 125%;
+      height: 125%;
+      top: -12.5%;
+      left: -12.5%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, rgba(184, 134, 11, 0.08) 45%, transparent 70%);
+      filter: blur(28px);
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.65;
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+
+    /* Marco interactivo corporativo: elevación, sombra suave y resplandor dorado */
+    .corporate-logo-frame {
+      position: relative;
+      z-index: 1;
+      width: clamp(170px, 22vw, 240px);
+      height: clamp(170px, 22vw, 240px);
+      aspect-ratio: 1 / 1;
+      border-radius: 26px;
+      overflow: hidden;
+      background: #02122c;
+      border: 1.5px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 
+        0 14px 35px rgba(0, 0, 0, 0.55),
+        0 0 22px rgba(212, 175, 55, 0.12);
+      transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  box-shadow 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  border-color 0.45s ease;
+      cursor: pointer;
+    }
+
+    /* Interactividad (Hover): Elevación sutil + sombra profunda + resplandor dorado */
+    .corporate-logo-frame:hover {
+      transform: translateY(-8px);
+      border-color: rgba(234, 197, 85, 0.7);
+      box-shadow: 
+        0 24px 50px rgba(0, 0, 0, 0.7),
+        0 0 35px rgba(212, 175, 55, 0.45),
+        0 0 65px rgba(212, 175, 55, 0.22);
+    }
+
+    .corporate-logo-card:hover .logo-ambient-glow {
+      opacity: 1;
+      transform: scale(1.12);
+    }
+
+    /* Imagen con proporción garantizada y responsividad */
+    .corporate-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+      transition: transform 0.45s ease;
+    }
+
+    .corporate-logo-frame:hover .corporate-logo-img {
+      transform: scale(1.03);
+    }
+
+    /* Brillo metálico (Loop): Destello de luz diagonal cada 4 segundos sobre tonos dorados */
+    .shimmer-effect {
+      position: absolute;
+      top: -60%;
+      left: -120%;
+      width: 200%;
+      height: 220%;
+      background: linear-gradient(
+        115deg,
+        transparent 0%,
+        transparent 32%,
+        rgba(255, 255, 255, 0) 38%,
+        rgba(255, 235, 170, 0.25) 45%,
+        rgba(255, 255, 255, 0.85) 50%,
+        rgba(212, 175, 55, 0.5) 54%,
+        rgba(255, 215, 0, 0.15) 58%,
+        transparent 65%,
+        transparent 100%
+      );
+      transform: rotate(25deg);
+      pointer-events: none;
+      mix-blend-mode: screen;
+      z-index: 2;
+      animation: metallicShimmer 4s ease-in-out infinite;
+    }
+
+    @keyframes metallicShimmer {
+      0% {
+        transform: translateX(-140%) rotate(25deg);
+        opacity: 0;
+      }
+      8% {
+        opacity: 1;
+      }
+      35% {
+        transform: translateX(140%) rotate(25deg);
+        opacity: 1;
+      }
+      45%, 100% {
+        transform: translateX(140%) rotate(25deg);
+        opacity: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .corporate-logo-card {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+      .shimmer-effect {
+        animation: none;
+        display: none;
+      }
+      .corporate-logo-frame {
+        transition: none;
+      }
     }
 
     /* Main Content */
@@ -688,12 +862,7 @@
     <header>
       <a href="/" class="brand" title="Asesoría CT">
         <div class="brand-icon">
-          <!-- Monogram / Balance / Chart Icon -->
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 3v18h18" />
-            <path d="m7 15 4-5 4 3 6-7" />
-            <circle cx="21" cy="6" r="2" fill="#10b981" stroke="none" />
-          </svg>
+          <img src="imagenes/LOGO CT.jpeg" alt="Logo Asesoría CT" width="46" height="46" />
         </div>
         <div class="brand-name">
           <span class="main-title">Asesoría CT</span>
@@ -721,6 +890,24 @@
 
     <!-- Main Content -->
     <main>
+      <!-- Logotipo Central Animado -->
+      <div class="corporate-logo-container">
+        <div class="corporate-logo-card">
+          <div class="logo-ambient-glow" aria-hidden="true"></div>
+          <div class="corporate-logo-frame" title="Asesoría CT">
+            <img 
+              src="imagenes/LOGO CT.jpeg" 
+              alt="Logotipo Corporativo Asesoría CT" 
+              class="corporate-logo-img"
+              width="240"
+              height="240"
+              loading="eager"
+            />
+            <div class="shimmer-effect" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+
       <div class="pill-hero">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
