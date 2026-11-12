@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asesoría CT | Asesorías Contables y Tributarias - Próximamente</title>
-  <meta name="description" content="Estamos construyendo una nueva plataforma para brindar soluciones contables, tributarias y financieras de alto nivel a empresas y profesionales. Próximamente en asesoriact.com.">
-  <meta name="keywords" content="asesoría contable, tributaria, impuestos, balances, nómina, finanzas, contadores, auditoría">
-  <meta name="theme-color" content="#090d16">
+  <title>Asesoría CT | Confianza • Compromiso • Resultados - Próximamente</title>
+  <meta name="description" content="Asesoría CT: Soluciones contables, tributarias y financieras de alto nivel con rigor normativo y excelencia corporativa. Próximamente nueva plataforma digital.">
+  <meta name="keywords" content="asesoría contable, tributaria, impuestos, estados financieros, balances, nómina, finanzas, contadores públicos, auditoría, Asesoría CT">
+  <meta name="theme-color" content="#031838">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="Asesoría CT | Próximamente">
-  <meta property="og:description" content="Impulsamos la claridad y solidez contable y tributaria de tu negocio. Muy pronto estrenamos sitio web.">
+  <meta property="og:title" content="Asesoría CT | Confianza • Compromiso • Resultados">
+  <meta property="og:description" content="Impulsamos la claridad y solidez contable y tributaria de tu negocio con máxima excelencia y rigor.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://asesoriact.com">
+  <meta property="og:image" content="imagenes/LOGO CT.jpeg">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230f172a'/><path d='M25 65 L40 35 L55 55 L75 25' stroke='%2338bdf8' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' fill='none'/><circle cx='75' cy='25' r='6' fill='%2310b981'/></svg>">
+  <link rel="icon" type="image/jpeg" href="imagenes/LOGO CT.jpeg">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,19 +25,31 @@
 
   <style>
     :root {
-      --bg-dark: #070a12;
-      --bg-card: rgba(16, 24, 40, 0.65);
-      --bg-card-hover: rgba(24, 34, 58, 0.85);
-      --border-card: rgba(255, 255, 255, 0.08);
-      --border-card-hover: rgba(56, 189, 248, 0.35);
-      --text-main: #f8fafc;
-      --text-secondary: #cbd5e1;
-      --text-muted: #94a3b8;
-      --primary: #38bdf8;
-      --primary-dark: #0284c7;
-      --accent: #10b981;
-      --accent-glow: rgba(56, 189, 248, 0.15);
-      --radius-lg: 20px;
+      /* Paleta Corporativa de Lujo: Azul Marino y Oro Metálico */
+      --navy-main: #031838;
+      --navy-dark: #021B3D;
+      --navy-deep: #01132b;
+      --navy-card: rgba(3, 24, 56, 0.78);
+      --navy-card-hover: rgba(2, 27, 61, 0.92);
+
+      --gold-dark: #AA7C11;
+      --gold-base: #D4AF37;
+      --gold-light: #F3E5AB;
+      --gold-soft: #e8d7a5;
+
+      /* Degradados Metálicos */
+      --gold-gradient: linear-gradient(135deg, #AA7C11 0%, #D4AF37 35%, #F3E5AB 60%, #D4AF37 85%, #AA7C11 100%);
+      --gold-shimmer-linear: linear-gradient(90deg, #AA7C11 0%, #D4AF37 40%, #F3E5AB 65%, #D4AF37 85%, #AA7C11 100%);
+      --gold-border-card: rgba(212, 175, 55, 0.28);
+      --gold-border-hover: rgba(243, 229, 171, 0.65);
+
+      /* Tipografía y Textos */
+      --text-bone: #F5F5F0;
+      --text-light: #E2E8F0;
+      --text-muted: #CBD5E1;
+      --text-gold-soft: #e5d29a;
+
+      --radius-lg: 22px;
       --radius-md: 14px;
       --radius-sm: 8px;
     }
@@ -49,8 +62,10 @@
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-main);
+      background-color: var(--navy-dark);
+      background-image: 
+        radial-gradient(ellipse at 50% 0%, #031838 0%, #021B3D 65%, #01132b 100%);
+      color: var(--text-light);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -59,43 +74,43 @@
       line-height: 1.6;
     }
 
-    /* Ambient background glows */
+    /* Ambient luxury light glows */
     .bg-glow {
       position: fixed;
       border-radius: 50%;
       filter: blur(140px);
       z-index: 0;
       pointer-events: none;
-      opacity: 0.45;
-      animation: floatGlow 14s ease-in-out infinite alternate;
+      opacity: 0.35;
+      animation: floatGlow 16s ease-in-out infinite alternate;
     }
     .glow-1 {
-      top: -150px;
-      left: 10%;
-      width: 550px;
-      height: 550px;
-      background: radial-gradient(circle, #0284c7 0%, rgba(2, 132, 199, 0) 70%);
+      top: -160px;
+      left: 15%;
+      width: 580px;
+      height: 580px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, rgba(170, 124, 17, 0.05) 60%, transparent 75%);
     }
     .glow-2 {
-      bottom: -100px;
-      right: 5%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, #0f766e 0%, rgba(15, 118, 110, 0) 70%);
-      animation-duration: 18s;
-      animation-delay: -5s;
+      bottom: -120px;
+      right: 8%;
+      width: 620px;
+      height: 620px;
+      background: radial-gradient(circle, rgba(3, 24, 56, 0.8) 0%, rgba(2, 27, 61, 0.5) 60%, transparent 75%);
+      animation-duration: 20s;
+      animation-delay: -6s;
     }
     .glow-3 {
-      top: 40%;
-      left: 60%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, #4338ca 0%, rgba(67, 56, 202, 0) 70%);
-      animation-duration: 20s;
-      animation-delay: -8s;
+      top: 45%;
+      left: 55%;
+      width: 440px;
+      height: 440px;
+      background: radial-gradient(circle, rgba(243, 229, 171, 0.08) 0%, rgba(212, 175, 55, 0.03) 60%, transparent 75%);
+      animation-duration: 22s;
+      animation-delay: -9s;
     }
 
-    /* Grid overlay */
+    /* Subtle grid overlay */
     .bg-grid {
       position: fixed;
       top: 0;
@@ -103,17 +118,17 @@
       width: 100%;
       height: 100%;
       background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-      background-size: 40px 40px;
+        linear-gradient(rgba(212, 175, 55, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.02) 1px, transparent 1px);
+      background-size: 44px 44px;
       z-index: 0;
       pointer-events: none;
     }
 
     @keyframes floatGlow {
       0% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(35px) scale(1.08); }
-      100% { transform: translateY(-25px) scale(0.95); }
+      50% { transform: translateY(35px) scale(1.06); }
+      100% { transform: translateY(-25px) scale(0.96); }
     }
 
     /* Layout Container */
@@ -121,65 +136,37 @@
       position: relative;
       z-index: 1;
       width: 100%;
-      max-width: 1160px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem;
+      padding: 0 1.5rem;
       display: flex;
       flex-direction: column;
       flex: 1;
-      justify-content: space-between;
     }
 
-    /* Header */
+    /* ========================================================
+       Encabezado (Header): Fondo #031838, Oro Metálico, Insignia
+       ======================================================== */
+    .header-wrapper {
+      width: 100%;
+      background-color: var(--navy-main);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+    }
+
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 2rem;
+      padding: 1.25rem 0;
       gap: 1.5rem;
-    }
-
-    .nav-container {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .main-nav {
-      display: flex;
-      align-items: center;
-      gap: 1.75rem;
-      list-style: none;
-    }
-
-    .nav-link {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.25s ease;
-      white-space: nowrap;
-    }
-
-    .nav-link:hover,
-    .nav-link.active {
-      color: var(--primary);
-    }
-
-    .nav-link-cta {
-      padding: 6px 14px;
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      border-radius: 100px;
-      background: rgba(56, 189, 248, 0.08);
-      color: #38bdf8;
-      transition: all 0.25s ease;
-    }
-
-    .nav-link-cta:hover {
-      background: rgba(56, 189, 248, 0.2);
-      color: #ffffff;
-      border-color: #38bdf8;
-      box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .brand {
@@ -187,26 +174,28 @@
       align-items: center;
       gap: 14px;
       text-decoration: none;
-      color: var(--text-main);
+      color: var(--text-bone);
     }
 
     .brand-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 12px;
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
       overflow: hidden;
       background: #02122c;
-      border: 1px solid rgba(212, 175, 55, 0.35);
+      border: 1.5px solid var(--gold-base);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), 0 0 12px rgba(212, 175, 55, 0.15);
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), 0 0 14px rgba(212, 175, 55, 0.25);
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+      flex-shrink: 0;
     }
 
     .brand:hover .brand-icon {
-      transform: scale(1.05);
-      border-color: rgba(212, 175, 55, 0.6);
+      transform: scale(1.06);
+      border-color: var(--gold-light);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.45);
     }
 
     .brand-icon img {
@@ -221,43 +210,132 @@
       flex-direction: column;
     }
 
+    /* Título principal 'Asesoría CT' en oro metálico con brillo continuo */
     .brand-name .main-title {
-      font-size: 1.35rem;
+      font-size: 1.45rem;
       font-weight: 800;
-      letter-spacing: -0.5px;
-      background: linear-gradient(120deg, #ffffff 40%, #bae6fd 100%);
+      letter-spacing: -0.4px;
+      background: var(--gold-gradient);
+      background-size: 220% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      animation: goldMetallicShine 7s linear infinite;
+      filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.25));
+      line-height: 1.15;
     }
 
+    /* Subtítulo 'Confianza • Compromiso • Resultados' en tono dorado suave */
     .brand-name .sub-title {
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       text-transform: uppercase;
-      letter-spacing: 1.8px;
-      color: var(--text-muted);
+      letter-spacing: 1.9px;
+      color: var(--gold-soft);
       font-weight: 600;
+      margin-top: 3px;
+      opacity: 0.92;
     }
 
+    @keyframes goldMetallicShine {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    /* Letras del menú doradas (#D4AF37) e iluminándose a (#F3E5AB) en hover */
+    .nav-link {
+      color: var(--gold-base);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+      position: relative;
+      padding: 4px 2px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--gold-light);
+      text-shadow: 0 0 14px rgba(243, 229, 171, 0.65);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--gold-gradient);
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-link-cta {
+      padding: 8px 18px;
+      border: 1.5px solid var(--gold-base);
+      border-radius: 100px;
+      background: rgba(2, 27, 61, 0.7);
+      color: var(--gold-light) !important;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3), 0 0 10px rgba(212, 175, 55, 0.2);
+    }
+
+    .nav-link-cta:hover {
+      background: var(--gold-gradient);
+      color: #021B3D !important;
+      text-shadow: none !important;
+      border-color: var(--gold-light);
+      box-shadow: 0 6px 22px rgba(212, 175, 55, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .nav-link-cta::after {
+      display: none;
+    }
+
+    /* Insignia discreta en borde dorado: 'En Construcción' */
     .badge-status {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 14px;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 6px 16px;
+      background: rgba(170, 124, 17, 0.14);
+      border: 1.2px solid var(--gold-base);
       border-radius: 100px;
       font-size: 0.8rem;
       font-weight: 600;
-      color: #34d399;
+      color: var(--gold-light);
       backdrop-filter: blur(8px);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.16);
+      white-space: nowrap;
     }
 
     .status-dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: #10b981;
+      background: var(--gold-base);
       position: relative;
+      box-shadow: 0 0 8px var(--gold-light);
     }
 
     .status-dot::after {
@@ -268,29 +346,46 @@
       width: 14px;
       height: 14px;
       border-radius: 50%;
-      background: rgba(16, 185, 129, 0.6);
-      animation: pulseDot 2s ease-out infinite;
+      background: rgba(212, 175, 55, 0.5);
+      animation: pulseDotGold 2.2s ease-out infinite;
     }
 
-    @keyframes pulseDot {
+    @keyframes pulseDotGold {
       0% { transform: scale(0.6); opacity: 1; }
-      100% { transform: scale(2.2); opacity: 0; }
+      100% { transform: scale(2.3); opacity: 0; }
     }
 
     /* ========================================================
-       Logotipo Corporativo Animado - Asesoría CT
+       Sección Principal (Hero Section):
+       Fondo azul marino con degradado hacia #021B3D,
+       Título oro metálico, texto blanco hueso, botón marino con oro
        ======================================================== */
+    main {
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: radial-gradient(ellipse at 50% 10%, rgba(3, 24, 56, 0.95) 0%, rgba(2, 27, 61, 0.98) 75%, #01132b 100%);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: var(--radius-lg);
+      margin: 2.25rem 0 3.5rem 0;
+      box-shadow: 0 25px 65px rgba(0, 0, 0, 0.55), 0 0 35px rgba(212, 175, 55, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Logotipo Central Animado */
     .corporate-logo-container {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 100%;
-      margin: 0 auto 2.25rem auto;
+      margin: 0 auto 2.2rem auto;
       position: relative;
       z-index: 2;
     }
 
-    /* Entrada suave: fade-in y scale de 0.9 a 1 al cargar */
     .corporate-logo-card {
       position: relative;
       display: inline-flex;
@@ -312,57 +407,53 @@
       }
     }
 
-    /* Resplandor ambiental de fondo para realzar la paleta dorada */
     .logo-ambient-glow {
       position: absolute;
-      width: 125%;
-      height: 125%;
-      top: -12.5%;
-      left: -12.5%;
-      background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, rgba(184, 134, 11, 0.08) 45%, transparent 70%);
-      filter: blur(28px);
+      width: 130%;
+      height: 130%;
+      top: -15%;
+      left: -15%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.28) 0%, rgba(170, 124, 17, 0.1) 45%, transparent 70%);
+      filter: blur(32px);
       z-index: 0;
       pointer-events: none;
-      opacity: 0.65;
+      opacity: 0.75;
       transition: opacity 0.45s ease, transform 0.45s ease;
     }
 
-    /* Marco interactivo corporativo: elevación, sombra suave y resplandor dorado */
     .corporate-logo-frame {
       position: relative;
       z-index: 1;
       width: clamp(170px, 22vw, 240px);
       height: clamp(170px, 22vw, 240px);
       aspect-ratio: 1 / 1;
-      border-radius: 26px;
+      border-radius: 28px;
       overflow: hidden;
       background: #02122c;
-      border: 1.5px solid rgba(212, 175, 55, 0.35);
+      border: 1.5px solid var(--gold-base);
       box-shadow: 
-        0 14px 35px rgba(0, 0, 0, 0.55),
-        0 0 22px rgba(212, 175, 55, 0.12);
+        0 14px 38px rgba(0, 0, 0, 0.65),
+        0 0 24px rgba(212, 175, 55, 0.2);
       transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
                   box-shadow 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
                   border-color 0.45s ease;
       cursor: pointer;
     }
 
-    /* Interactividad (Hover): Elevación sutil + sombra profunda + resplandor dorado */
     .corporate-logo-frame:hover {
       transform: translateY(-8px);
-      border-color: rgba(234, 197, 85, 0.7);
+      border-color: var(--gold-light);
       box-shadow: 
-        0 24px 50px rgba(0, 0, 0, 0.7),
-        0 0 35px rgba(212, 175, 55, 0.45),
-        0 0 65px rgba(212, 175, 55, 0.22);
+        0 26px 55px rgba(0, 0, 0, 0.75),
+        0 0 40px rgba(212, 175, 55, 0.5),
+        0 0 75px rgba(243, 229, 171, 0.25);
     }
 
     .corporate-logo-card:hover .logo-ambient-glow {
       opacity: 1;
-      transform: scale(1.12);
+      transform: scale(1.15);
     }
 
-    /* Imagen con proporción garantizada y responsividad */
     .corporate-logo-img {
       width: 100%;
       height: 100%;
@@ -378,7 +469,6 @@
       transform: scale(1.03);
     }
 
-    /* Brillo metálico (Loop): Destello de luz diagonal cada 4 segundos sobre tonos dorados */
     .shimmer-effect {
       position: absolute;
       top: -60%;
@@ -392,8 +482,8 @@
         rgba(255, 255, 255, 0) 38%,
         rgba(255, 235, 170, 0.25) 45%,
         rgba(255, 255, 255, 0.85) 50%,
-        rgba(212, 175, 55, 0.5) 54%,
-        rgba(255, 215, 0, 0.15) 58%,
+        rgba(212, 175, 55, 0.55) 54%,
+        rgba(243, 229, 171, 0.2) 58%,
         transparent 65%,
         transparent 100%
       );
@@ -422,8 +512,653 @@
       }
     }
 
+    /* Pastilla superior */
+    .pill-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 20px;
+      background: rgba(170, 124, 17, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 100px;
+      color: var(--gold-light);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.6rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .pill-hero svg {
+      stroke: var(--gold-base);
+    }
+
+    /* Título de construcción en degradado oro metálico */
+    .hero-title {
+      font-size: clamp(2.3rem, 5.2vw, 4.1rem);
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -1.2px;
+      max-width: 920px;
+      margin-bottom: 1.5rem;
+      color: var(--text-bone);
+    }
+
+    .hero-title .gradient-text {
+      background: var(--gold-gradient);
+      background-size: 220% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+      filter: drop-shadow(0 3px 12px rgba(212, 175, 55, 0.3));
+      animation: goldMetallicShine 8s linear infinite;
+    }
+
+    /* Texto descriptivo en blanco hueso para máxima legibilidad */
+    .hero-desc {
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      color: var(--text-bone);
+      max-width: 760px;
+      margin-bottom: 3rem;
+      font-weight: 400;
+      line-height: 1.75;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+    }
+
+    /* Countdown Timer en Oro y Marino */
+    .countdown-container {
+      background: var(--navy-card);
+      border: 1.2px solid var(--gold-border-card);
+      backdrop-filter: blur(18px);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.75rem;
+      display: flex;
+      gap: 2.2rem;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 3.5rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 25px rgba(212, 175, 55, 0.1);
+    }
+
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 80px;
+    }
+
+    .countdown-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.3rem, 4vw, 3.4rem);
+      font-weight: 700;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+      filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3));
+    }
+
+    .countdown-lbl {
+      font-size: 0.76rem;
+      color: var(--gold-soft);
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-weight: 600;
+      opacity: 0.9;
+    }
+
+    .countdown-divider {
+      font-size: 2.2rem;
+      color: var(--gold-base);
+      font-weight: 300;
+      margin-top: -12px;
+      user-select: none;
+      opacity: 0.5;
+    }
+
+    /* Servicios / Áreas de especialidad */
+    .services-title {
+      font-size: 0.96rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2.2px;
+      color: var(--gold-base);
+      margin-bottom: 1.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .services-title::before,
+    .services-title::after {
+      content: '';
+      width: 30px;
+      height: 1px;
+      background: var(--gold-gradient);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.6rem;
+      width: 100%;
+      margin-bottom: 3.5rem;
+    }
+
+    .service-card {
+      background: var(--navy-card);
+      border: 1px solid var(--gold-border-card);
+      backdrop-filter: blur(14px);
+      border-radius: var(--radius-md);
+      padding: 1.85rem 1.6rem;
+      text-align: left;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--gold-gradient);
+      opacity: 0.75;
+      transition: height 0.3s ease, opacity 0.3s ease;
+    }
+
+    .service-card:hover {
+      background: var(--navy-card-hover);
+      border-color: var(--gold-border-hover);
+      transform: translateY(-5px);
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.2);
+    }
+
+    .service-card:hover::before {
+      height: 4px;
+      opacity: 1;
+    }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: rgba(170, 124, 17, 0.16);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--gold-light);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.2px;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Panel de Suscripción y Contacto */
+    .action-panel {
+      width: 100%;
+      max-width: 720px;
+      background: linear-gradient(180deg, rgba(3, 24, 56, 0.9) 0%, rgba(2, 27, 61, 0.95) 100%);
+      border: 1.2px solid var(--gold-border-card);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2.25rem;
+      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.55), 0 0 25px rgba(212, 175, 55, 0.1);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .action-panel h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: var(--text-bone);
+    }
+
+    .action-panel p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.6rem;
+    }
+
+    .subscribe-form {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+      max-width: 550px;
+      margin: 0 auto 1.6rem auto;
+    }
+
+    .subscribe-input {
+      flex: 1;
+      padding: 0.9rem 1.3rem;
+      background: rgba(1, 19, 43, 0.9);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: var(--radius-sm);
+      color: var(--text-bone);
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    .subscribe-input::placeholder {
+      color: #94a3b8;
+    }
+
+    .subscribe-input:focus {
+      border-color: var(--gold-base);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+      background: rgba(1, 19, 43, 1);
+    }
+
+    /* Botón de llamada a la acción (CTA): Relleno de marino oscuro con letras en azul oro metálico */
+    .subscribe-btn {
+      padding: 0.9rem 1.85rem;
+      background: var(--navy-dark);
+      border: 1.5px solid var(--gold-base);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.98rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.2);
+    }
+
+    .subscribe-btn span {
+      background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 35%, #88c8ff 70%, #D4AF37 90%, #F3E5AB 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: goldMetallicShine 6s linear infinite;
+      letter-spacing: 0.5px;
+    }
+
+    .subscribe-btn svg {
+      stroke: var(--gold-base);
+      transition: transform 0.3s ease, stroke 0.3s ease;
+    }
+
+    .subscribe-btn:hover {
+      background: var(--navy-main);
+      border-color: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(0, 0, 0, 0.65), 0 0 25px rgba(212, 175, 55, 0.45);
+    }
+
+    .subscribe-btn:hover svg {
+      stroke: var(--gold-light);
+      transform: translateX(3px);
+    }
+
+    .contact-urgency {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      padding-top: 1.4rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.18);
+      font-size: 0.92rem;
+      color: var(--text-bone);
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(37, 211, 102, 0.12);
+      border: 1.2px solid rgba(37, 211, 102, 0.45);
+      color: #34d399;
+      padding: 8px 18px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .whatsapp-btn:hover {
+      background: rgba(37, 211, 102, 0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+      color: #ffffff;
+    }
+
+    .email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--gold-light);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .email-link:hover {
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(243, 229, 171, 0.6);
+      text-decoration: underline;
+    }
+
+    /* ========================================================
+       Pie de Página (Footer): Azul Marino Más Oscuro (#021B3D),
+       Línea Superior Delgada en Oro Metálico, Títulos e Iconos
+       (Facebook, WhatsApp y TikTok) en Oro (#D4AF37),
+       Información Legal en Texto Claro
+       ======================================================== */
+    footer {
+      background-color: var(--navy-dark);
+      position: relative;
+      padding: 3.5rem 0 2rem;
+      margin-top: auto;
+      width: 100%;
+    }
+
+    /* Línea superior delgada en oro metálico */
+    .footer-gold-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent 0%, #AA7C11 20%, #D4AF37 50%, #F3E5AB 70%, #D4AF37 80%, transparent 100%);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.45);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .footer-col-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold-base);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .footer-col-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35px;
+      height: 2px;
+      background: var(--gold-gradient);
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-brand .brand-icon {
+      width: 44px;
+      height: 44px;
+    }
+
+    .footer-desc {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .footer-contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      font-size: 0.92rem;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-light);
+    }
+
+    .footer-contact-item svg {
+      stroke: var(--gold-base);
+      flex-shrink: 0;
+    }
+
+    .footer-contact-item a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .footer-contact-item a:hover {
+      color: var(--gold-light);
+      text-shadow: 0 0 10px rgba(243, 229, 171, 0.5);
+    }
+
+    /* Redes Sociales: Facebook, WhatsApp y TikTok en #D4AF37 */
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 0.5rem;
+      align-items: center;
+    }
+
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(3, 24, 56, 0.85);
+      border: 1.2px solid var(--gold-base);
+      color: var(--gold-base);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    }
+
+    .social-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+      transition: transform 0.3s ease;
+    }
+
+    .social-btn:hover {
+      color: var(--gold-light);
+      background: rgba(170, 124, 17, 0.25);
+      border-color: var(--gold-light);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 18px rgba(212, 175, 55, 0.45);
+    }
+
+    .social-btn:hover svg {
+      transform: scale(1.1);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.88rem;
+      color: var(--text-light);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-legal-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    .footer-legal-links a:hover {
+      color: var(--gold-light);
+      text-decoration: underline;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--navy-main);
+      border: 1.5px solid var(--gold-base);
+      color: var(--text-bone);
+      padding: 1.1rem 1.85rem;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65), 0 0 25px rgba(212, 175, 55, 0.3);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 100;
+      font-size: 0.95rem;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .toast svg {
+      stroke: var(--gold-base);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      header {
+        flex-direction: column;
+        gap: 1.25rem;
+        align-items: center;
+        text-align: center;
+      }
+      .nav-container {
+        flex-direction: column;
+        width: 100%;
+        gap: 1.2rem;
+      }
+      .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.3rem;
+      }
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+      }
+      .footer-col-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .footer-brand {
+        justify-content: center;
+      }
+      .footer-desc {
+        max-width: 100%;
+      }
+      .footer-contact-list {
+        align-items: center;
+      }
+      .social-links {
+        justify-content: center;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1rem;
+      }
+      main {
+        padding: 2.5rem 1rem;
+        margin: 1.5rem 0 2.5rem 0;
+      }
+      .main-nav {
+        gap: 0.9rem;
+        font-size: 0.88rem;
+      }
+      .countdown-container {
+        gap: 1.1rem;
+        padding: 1.5rem 1rem;
+        width: 100%;
+      }
+      .countdown-item {
+        min-width: 60px;
+      }
+      .countdown-divider {
+        font-size: 1.6rem;
+      }
+      .subscribe-form {
+        flex-direction: column;
+      }
+      .subscribe-btn {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      .corporate-logo-card {
+      .corporate-logo-card,
+      .brand-name .main-title,
+      .hero-title .gradient-text,
+      .subscribe-btn span {
         animation: none;
         opacity: 1;
         transform: none;
@@ -436,417 +1171,6 @@
         transition: none;
       }
     }
-
-    /* Main Content */
-    main {
-      padding: 3rem 0;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .pill-hero {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 18px;
-      background: rgba(56, 189, 248, 0.08);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: 100px;
-      color: #7dd3fc;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .hero-title {
-      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-      max-width: 880px;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-title .gradient-text {
-      background: linear-gradient(135deg, #ffffff 20%, #38bdf8 65%, #34d399 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline-block;
-    }
-
-    .hero-desc {
-      font-size: clamp(1rem, 1.8vw, 1.25rem);
-      color: var(--text-secondary);
-      max-width: 720px;
-      margin-bottom: 3rem;
-      font-weight: 400;
-      line-height: 1.7;
-    }
-
-    /* Countdown Timer */
-    .countdown-container {
-      background: var(--bg-card);
-      border: 1px solid var(--border-card);
-      backdrop-filter: blur(16px);
-      border-radius: var(--radius-lg);
-      padding: 2rem 2.5rem;
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 3.5rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    }
-
-    .countdown-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 80px;
-    }
-
-    .countdown-val {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
-      font-weight: 700;
-      color: #ffffff;
-      line-height: 1;
-      margin-bottom: 0.4rem;
-      text-shadow: 0 2px 10px rgba(56, 189, 248, 0.3);
-    }
-
-    .countdown-lbl {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-weight: 600;
-    }
-
-    .countdown-divider {
-      font-size: 2.2rem;
-      color: rgba(255, 255, 255, 0.2);
-      font-weight: 300;
-      margin-top: -10px;
-      user-select: none;
-    }
-
-    /* Services Grid */
-    .services-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #94a3b8;
-      margin-bottom: 1.8rem;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      width: 100%;
-      margin-bottom: 3.5rem;
-    }
-
-    .service-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-card);
-      backdrop-filter: blur(12px);
-      border-radius: var(--radius-md);
-      padding: 1.75rem 1.5rem;
-      text-align: left;
-      transition: all 0.35s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, #38bdf8, #10b981);
-      opacity: 0;
-      transition: opacity 0.35s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--border-card-hover);
-      background: var(--bg-card-hover);
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
-    }
-
-    .service-card:hover::before {
-      opacity: 1;
-    }
-
-    .card-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: rgba(56, 189, 248, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-      color: #38bdf8;
-    }
-
-    .service-card h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 0.5rem;
-    }
-
-    .service-card p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-
-    /* Notification & Actions Form */
-    .action-panel {
-      width: 100%;
-      max-width: 680px;
-      background: linear-gradient(180deg, rgba(22, 33, 56, 0.8) 0%, rgba(13, 20, 36, 0.9) 100%);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: var(--radius-lg);
-      padding: 2.25rem;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-      margin-bottom: 3rem;
-      text-align: center;
-    }
-
-    .action-panel h2 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: #ffffff;
-    }
-
-    .action-panel p {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-    }
-
-    .subscribe-form {
-      display: flex;
-      gap: 10px;
-      width: 100%;
-      max-width: 520px;
-      margin: 0 auto 1.5rem auto;
-    }
-
-    .subscribe-input {
-      flex: 1;
-      padding: 0.85rem 1.2rem;
-      background: rgba(10, 15, 29, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: var(--radius-sm);
-      color: #ffffff;
-      font-family: inherit;
-      font-size: 0.95rem;
-      outline: none;
-      transition: all 0.25s ease;
-    }
-
-    .subscribe-input:focus {
-      border-color: #38bdf8;
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
-      background: rgba(10, 15, 29, 1);
-    }
-
-    .subscribe-btn {
-      padding: 0.85rem 1.6rem;
-      background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
-      color: #ffffff;
-      border: none;
-      border-radius: var(--radius-sm);
-      font-family: inherit;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.25s ease;
-      white-space: nowrap;
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
-    }
-
-    .subscribe-btn:hover {
-      background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
-    }
-
-    .contact-urgency {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      padding-top: 1.25rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .whatsapp-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(37, 211, 102, 0.12);
-      border: 1px solid rgba(37, 211, 102, 0.35);
-      color: #25d366;
-      padding: 8px 18px;
-      border-radius: 100px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.88rem;
-      transition: all 0.25s ease;
-    }
-
-    .whatsapp-btn:hover {
-      background: rgba(37, 211, 102, 0.25);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
-    }
-
-    .email-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: #7dd3fc;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .email-link:hover {
-      color: #ffffff;
-      text-decoration: underline;
-    }
-
-    /* Toast Notification */
-    .toast {
-      position: fixed;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%) translateY(100px);
-      background: #0f172a;
-      border: 1px solid #10b981;
-      color: #ffffff;
-      padding: 1rem 1.75rem;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      pointer-events: none;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: 100;
-      font-size: 0.92rem;
-    }
-
-    .toast.show {
-      transform: translateX(-50%) translateY(0);
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 2rem 0 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-left {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .footer-right {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .footer-right span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-      header {
-        flex-direction: column;
-        gap: 1.25rem;
-        align-items: center;
-      }
-      .nav-container {
-        flex-direction: column;
-        width: 100%;
-        gap: 1rem;
-      }
-      .main-nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.2rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        padding: 1.5rem 1rem;
-      }
-      .main-nav {
-        gap: 0.9rem;
-        font-size: 0.88rem;
-      }
-      .countdown-container {
-        gap: 1rem;
-        padding: 1.5rem 1rem;
-        width: 100%;
-      }
-      .countdown-item {
-        min-width: 60px;
-      }
-      .countdown-divider {
-        font-size: 1.5rem;
-      }
-      .subscribe-form {
-        flex-direction: column;
-      }
-      .subscribe-btn {
-        justify-content: center;
-        width: 100%;
-      }
-      footer {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-      }
-    }
   </style>
 </head>
 <body>
@@ -857,44 +1181,49 @@
   <div class="bg-glow glow-3"></div>
   <div class="bg-grid"></div>
 
+  <!-- Encabezado (Header) con fondo #031838 -->
+  <div class="header-wrapper">
+    <div class="container">
+      <header>
+        <a href="/" class="brand" title="Asesoría CT">
+          <div class="brand-icon">
+            <img src="imagenes/LOGO CT.jpeg" alt="Logo Asesoría CT" width="52" height="52" />
+          </div>
+          <div class="brand-name">
+            <span class="main-title">Asesoría CT</span>
+            <span class="sub-title">Confianza &bull; Compromiso &bull; Resultados</span>
+          </div>
+        </a>
+
+        <div class="nav-container">
+          <nav aria-label="Navegación principal">
+            <ul class="main-nav">
+              <li><a href="#" class="nav-link active">Inicio</a></li>
+              <li><a href="#quienes-somos" class="nav-link">Quiénes somos</a></li>
+              <li><a href="#servicios" class="nav-link">Nuestros servicios</a></li>
+              <li><a href="#blog" class="nav-link">Blog</a></li>
+              <li><a href="#contacto" class="nav-link nav-link-cta">Contáctanos</a></li>
+            </ul>
+          </nav>
+
+          <!-- Insignia en borde dorado: 'En Construcción' -->
+          <div class="badge-status">
+            <span class="status-dot"></span>
+            <span>En Construcción</span>
+          </div>
+        </div>
+      </header>
+    </div>
+  </div>
+
   <div class="container">
-    <!-- Header -->
-    <header>
-      <a href="/" class="brand" title="Asesoría CT">
-        <div class="brand-icon">
-          <img src="imagenes/LOGO CT.jpeg" alt="Logo Asesoría CT" width="46" height="46" />
-        </div>
-        <div class="brand-name">
-          <span class="main-title">Asesoría CT</span>
-          <span class="sub-title">Contable &bull; Tributaria &bull; Financiera</span>
-        </div>
-      </a>
-
-      <div class="nav-container">
-        <nav aria-label="Navegación principal">
-          <ul class="main-nav">
-            <li><a href="#" class="nav-link active">Inicio</a></li>
-            <li><a href="#quienes-somos" class="nav-link">Quiénes somos</a></li>
-            <li><a href="#servicios" class="nav-link">Nuestros servicios</a></li>
-            <li><a href="#blog" class="nav-link">Blog</a></li>
-            <li><a href="#contacto" class="nav-link nav-link-cta">Contáctanos</a></li>
-          </ul>
-        </nav>
-
-        <div class="badge-status">
-          <span class="status-dot"></span>
-          <span>En Construcción</span>
-        </div>
-      </div>
-    </header>
-
-    <!-- Main Content -->
+    <!-- Sección Principal (Hero Section) con fondo azul marino degradado hacia #021B3D -->
     <main>
-      <!-- Logotipo Central Animado -->
+      <!-- Logotipo Central Animado (Entrada suave, shimmer 4s, hover elevación con resplandor dorado) -->
       <div class="corporate-logo-container">
         <div class="corporate-logo-card">
           <div class="logo-ambient-glow" aria-hidden="true"></div>
-          <div class="corporate-logo-frame" title="Asesoría CT">
+          <div class="corporate-logo-frame" title="Asesoría CT - Confianza, Compromiso, Resultados">
             <img 
               src="imagenes/LOGO CT.jpeg" 
               alt="Logotipo Corporativo Asesoría CT" 
@@ -915,15 +1244,17 @@
         <span>Próximamente &bull; Nueva Plataforma Digital</span>
       </div>
 
+      <!-- Título de construcción en degradado oro metálico -->
       <h1 class="hero-title">
         Construyendo la mejor versión de tu <span class="gradient-text">tranquilidad financiera</span>
       </h1>
 
+      <!-- Texto descriptivo en blanco hueso -->
       <p class="hero-desc">
-        Estamos creando un portal moderno para brindarte asesoría contable, tributaria y laboral integral. Soluciones estratégicas con rigor normativo, transparencia y acompañamiento continuo para impulsar tu negocio.
+        Estamos creando un portal exclusivo para brindarte asesoría contable, tributaria y laboral de alto nivel. Soluciones estratégicas con rigor normativo, transparencia absoluta y acompañamiento corporativo continuo para impulsar tu negocio.
       </p>
 
-      <!-- Countdown -->
+      <!-- Countdown en tonos oro y marino -->
       <div class="countdown-container">
         <div class="countdown-item">
           <span class="countdown-val" id="days">00</span>
@@ -946,8 +1277,8 @@
         </div>
       </div>
 
-      <!-- Preview of services -->
-      <span class="services-title">Nuestras áreas de especialidad</span>
+      <!-- Áreas de especialidad corporativas -->
+      <span class="services-title" id="servicios">Nuestras áreas de especialidad</span>
       <div class="services-grid">
         <div class="service-card">
           <div class="card-icon">
@@ -959,7 +1290,7 @@
             </svg>
           </div>
           <h3>Asesoría Contable</h3>
-          <p>Teneduría de libros, estados financieros periódicos y control riguroso bajo normativas vigentes.</p>
+          <p>Teneduría de libros, preparación de balances periódicos y control riguroso bajo estándares normativos internacionales.</p>
         </div>
 
         <div class="service-card">
@@ -970,7 +1301,7 @@
             </svg>
           </div>
           <h3>Gestión Tributaria</h3>
-          <p>Planeación fiscal eficiente, declaración oportuna de impuestos y prevención de sanciones legales.</p>
+          <p>Planeación fiscal estratégica, presentación exacta y oportuna de declaraciones y blindaje ante sanciones regulatorias.</p>
         </div>
 
         <div class="service-card">
@@ -983,7 +1314,7 @@
             </svg>
           </div>
           <h3>Nómina y Laboral</h3>
-          <p>Liquidación exacta de sueldos, aportes a seguridad social, contratos y cumplimiento ante entes reguladores.</p>
+          <p>Liquidación puntual de sueldos, prestaciones sociales, aportes de seguridad social y estricto cumplimiento laboral.</p>
         </div>
 
         <div class="service-card">
@@ -994,27 +1325,28 @@
             </svg>
           </div>
           <h3>Auditoría y Consultoría</h3>
-          <p>Diagnósticos empresariales, control interno, evaluación de riesgos y optimización de rentabilidad.</p>
+          <p>Diagnósticos financieros integrales, evaluación de control interno, mitigación de riesgos y maximización de rentabilidad.</p>
         </div>
       </div>
 
-      <!-- Subscription & Urgent Contact -->
-      <div class="action-panel">
-        <h2>¿Quieres ser el primero en saber cuándo estemos listos?</h2>
-        <p>Déjanos tu correo y te notificaremos inmediatamente el día de nuestro lanzamiento oficial.</p>
+      <!-- Panel de Lanzamiento y Suscripción -->
+      <div class="action-panel" id="contacto">
+        <h2>¿Deseas ser el primero en acceder a nuestra plataforma?</h2>
+        <p>Ingresa tu correo y te notificaremos el día exacto de nuestro lanzamiento oficial.</p>
 
         <form class="subscribe-form" id="notifyForm">
           <input 
             type="email" 
             class="subscribe-input" 
             id="emailInput" 
-            placeholder="Introduce tu correo electrónico..." 
+            placeholder="Introduce tu correo electrónico corporativo..." 
             required
             autocomplete="email"
           >
+          <!-- Botón CTA: Relleno de marino oscuro con letras en azul oro metálico -->
           <button type="submit" class="subscribe-btn">
             <span>Avisarme</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="22" y1="2" x2="11" y2="13"></line>
               <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
             </svg>
@@ -1022,51 +1354,119 @@
         </form>
 
         <div class="contact-urgency">
-          <span>¿Requieres atención o asesoría inmediata?</span>
+          <span>¿Requieres atención profesional inmediata?</span>
           <a href="https://wa.me/573001439411?text=Hola%2C%20quisiera%20recibir%20asesor%C3%ADa%20contable%20y%20tributaria." target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
-            <!-- WhatsApp SVG -->
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
             </svg>
-            <span>WhatsApp</span>
+            <span>WhatsApp Directo</span>
           </a>
-          <span>o escríbenos a <a href="mailto:contacto@asesoriact.com" class="email-link">contacto@asesoriact.com</a></span>
+          <span>o contáctanos a <a href="mailto:contacto@asesoriact.com" class="email-link">contacto@asesoriact.com</a></span>
         </div>
       </div>
     </main>
-
-    <!-- Footer -->
-    <footer>
-      <div class="footer-left">
-        <span>&copy; <span id="currentYear"></span> <strong>Asesoría CT</strong>. Todos los derechos reservados.</span>
-      </div>
-      <div class="footer-right">
-        <span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
-          Precisión y Confianza
-        </span>
-        <span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-          </svg>
-          Disponibilidad Inmediata
-        </span>
-      </div>
-    </footer>
   </div>
+
+  <!-- Pie de Página (Footer): Fondo #021B3D con línea superior delgada en oro metálico -->
+  <footer>
+    <div class="footer-gold-line" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer-content">
+        <!-- Columna Marca -->
+        <div class="footer-col">
+          <a href="/" class="footer-brand" title="Asesoría CT">
+            <div class="brand-icon">
+              <img src="imagenes/LOGO CT.jpeg" alt="Logo Asesoría CT" width="44" height="44" />
+            </div>
+            <div class="brand-name">
+              <span class="main-title">Asesoría CT</span>
+              <span class="sub-title">Confianza &bull; Compromiso &bull; Resultados</span>
+            </div>
+          </a>
+          <p class="footer-desc">
+            Firma especializada en consultoría contable, tributaria y laboral. Respaldamos el crecimiento sostenible y la tranquilidad fiscal de tu empresa.
+          </p>
+        </div>
+
+        <!-- Columna Contacto con títulos dorados (#D4AF37) -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Contacto Corporativo</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <a href="mailto:contacto@asesoriact.com">contacto@asesoriact.com</a>
+            </li>
+            <li class="footer-contact-item">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <a href="https://wa.me/573001439411" target="_blank" rel="noopener noreferrer">+57 (300) 143-9411</a>
+            </li>
+            <li class="footer-contact-item">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Colombia &bull; Cobertura Nacional</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Columna Redes Sociales: Facebook, WhatsApp y TikTok en #D4AF37 -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Redes Sociales</h4>
+          <p class="footer-desc" style="font-size: 0.88rem;">
+            Síguenos en nuestros canales oficiales para estar al tanto de novedades tributarias y noticias clave.
+          </p>
+          <div class="social-links">
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Facebook Asesoría CT" aria-label="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <!-- WhatsApp -->
+            <a href="https://wa.me/573001439411?text=Hola%2C%20quisiera%20contactar%20a%20Asesor%C3%ADa%20CT." target="_blank" rel="noopener noreferrer" class="social-btn" title="WhatsApp Asesoría CT" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+            </a>
+            <!-- TikTok -->
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="TikTok Asesoría CT" aria-label="TikTok">
+              <svg viewBox="0 0 24 24">
+                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-1.01-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.16 1.18 2.09 2.35 2.33.71.16 1.46.12 2.14-.14.77-.28 1.41-.89 1.74-1.64.31-.7.42-1.47.41-2.23.03-5.26.01-10.52.02-15.78z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra Inferior de Información Legal en Texto Claro -->
+      <div class="footer-bottom">
+        <div>
+          <span>&copy; <span id="currentYear"></span> <strong>Asesoría CT</strong>. Confianza &bull; Compromiso &bull; Resultados. Todos los derechos reservados.</span>
+        </div>
+        <ul class="footer-legal-links">
+          <li><a href="#">Términos y Condiciones</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Aviso Legal</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
   <!-- Toast Confirmation -->
   <div class="toast" id="toast">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
       <polyline points="22 4 12 14.01 9 11.01"></polyline>
     </svg>
     <div>
-      <strong>¡Suscripción confirmada!</strong>
-      <p style="font-size: 0.8rem; color: #94a3b8; margin: 0;">Te avisaremos tan pronto como nuestro portal esté en línea.</p>
+      <strong style="color: var(--gold-light);">¡Suscripción confirmada!</strong>
+      <p style="font-size: 0.82rem; color: var(--text-light); margin: 0;">Te avisaremos en cuanto nuestra plataforma corporativa esté disponible.</p>
     </div>
   </div>
 
@@ -1123,7 +1523,7 @@
       const email = emailInput.value.trim();
 
       if (email) {
-        // Save to local storage demo
+        // Save to local storage
         const emails = JSON.parse(localStorage.getItem('subscribed_emails') || '[]');
         emails.push({ email: email, date: new Date().toISOString() });
         localStorage.setItem('subscribed_emails', JSON.stringify(emails));
