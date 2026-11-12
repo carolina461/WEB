@@ -855,6 +855,186 @@ footer {
   text-decoration: underline;
 }
 
+/* ========================================================
+   Sección Quiénes Somos: Perfil con Foto + Texto
+   ======================================================== */
+
+/* Layout principal: foto a la izquierda, texto a la derecha */
+.about-profile {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 3.5rem;
+  align-items: start;
+  width: 100%;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+/* Columna de la foto */
+.about-photo-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Marco de la foto (mismo estilo que corporate-logo-frame pero más alto) */
+.about-photo-frame {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 3 / 4;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 2px solid var(--gold-base);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.14), 0 0 20px rgba(212, 175, 55, 0.2);
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.about-photo-frame:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22), 0 0 30px rgba(212, 175, 55, 0.35);
+}
+
+.about-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Tarjeta de credencial bajo la foto */
+.about-credential {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border: 1.5px solid var(--gold-base);
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold-deep);
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.about-credential svg {
+  stroke: var(--gold-dark);
+  flex-shrink: 0;
+}
+
+/* Columna del texto */
+.about-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding-top: 0.5rem;
+}
+
+/* Párrafo biografía principal */
+.about-bio {
+  font-size: clamp(1.05rem, 1.6vw, 1.18rem);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+/* Lista de puntos destacados */
+.about-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.about-highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.about-highlights li strong {
+  color: var(--text-main);
+}
+
+.about-highlight-icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1.5px solid var(--gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-dark);
+  margin-top: 2px;
+}
+
+/* Botón CTA de contacto */
+.about-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.9rem 2rem;
+  background: var(--gold-gradient);
+  color: #021B3D;
+  border-radius: 100px;
+  font-weight: 800;
+  font-size: 0.98rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  align-self: flex-start;
+  box-shadow: 0 4px 18px rgba(170, 124, 17, 0.28);
+  letter-spacing: 0.3px;
+}
+
+.about-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(170, 124, 17, 0.45);
+}
+
+.about-cta-btn svg {
+  stroke: #021B3D;
+  transition: transform 0.25s ease;
+}
+
+.about-cta-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* Responsive: apila foto encima del texto en pantallas menores */
+@media (max-width: 860px) {
+  .about-profile {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .about-photo-col {
+    align-items: center;
+  }
+  .about-photo-frame {
+    max-width: 240px;
+    aspect-ratio: 3 / 4;
+  }
+  .about-cta-btn {
+    align-self: center;
+  }
+  .about-text-col {
+    text-align: center;
+  }
+  .about-highlights li {
+    text-align: left;
+  }
+}
+
 /* Toast */
 .toast {
   position: fixed;
