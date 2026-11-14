@@ -463,6 +463,72 @@ main {
   line-height: 1.6;
 }
 
+/* Sección de Calendario (Booking Cal.com) */
+.booking-section {
+  width: 100%;
+  max-width: 920px;
+  background: #FFFFFF;
+  border: 1.5px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  margin-bottom: 3.5rem;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.booking-header {
+  margin-bottom: 1.75rem;
+}
+
+.booking-title {
+  font-size: 1.65rem;
+  color: var(--gold-deep);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.booking-desc {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.booking-calendar-wrapper {
+  width: 100%;
+  min-height: 620px;
+  height: 650px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(170, 124, 17, 0.15);
+}
+
+.booking-calendar-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .booking-section {
+    padding: 1.5rem 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .booking-title {
+    font-size: 1.35rem;
+  }
+  .booking-calendar-wrapper {
+    min-height: 680px;
+    height: 700px;
+  }
+}
+
 /* Countdown */
 .countdown-container {
   border: 1.5px solid var(--gold-border);
