@@ -597,10 +597,30 @@ main {
 
 .subscribe-form {
   display: flex;
+  flex-direction: column;
   gap: 12px;
   width: 100%;
-  max-width: 520px;
+  max-width: 540px;
   margin: 0 auto 1.5rem auto;
+}
+
+.subscribe-form .form-row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.subscribe-form .form-row > * {
+  flex: 1;
+  min-width: 0;
+}
+
+.subscribe-form .form-row-submit .email-input-field {
+  flex: 1 1 auto;
+}
+
+.subscribe-form .form-row-submit .subscribe-btn {
+  flex: 0 0 auto;
 }
 
 .subscribe-input {
@@ -1138,6 +1158,13 @@ footer {
   }
   .subscribe-form {
     flex-direction: column;
+  }
+  .subscribe-form .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .subscribe-form .form-row > * {
+    width: 100%;
   }
   .subscribe-btn {
     justify-content: center;
