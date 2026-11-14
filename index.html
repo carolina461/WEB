@@ -183,6 +183,7 @@
         <form class="subscribe-form" id="notifyForm">
           <input 
             type="email" 
+            name="email"
             class="subscribe-input" 
             id="emailInput" 
             placeholder="Introduce tu correo electrónico..." 
@@ -301,8 +302,8 @@
       <polyline points="22 4 12 14.01 9 11.01"></polyline>
     </svg>
     <div>
-      <strong style="color: var(--gold-deep);">¡Suscripción confirmada!</strong>
-      <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Te avisaremos en cuanto la plataforma esté disponible.</p>
+      <strong style="color: var(--gold-deep);" id="toastTitle">¡Gracias!</strong>
+      <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;" id="toastMessage">Te avisaremos el día del lanzamiento.</p>
     </div>
   </div>
 
@@ -350,21 +351,33 @@
     const form = document.getElementById('notifyForm');
     const emailInput = document.getElementById('emailInput');
     const toast = document.getElementById('toast');
+    const submitBtn = form.querySelector('button[type="submit"]');
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       const email = emailInput.value.trim();
 
       if (email) {
-        const emails = JSON.parse(localStorage.getItem('subscribed_emails') || '[]');
-        emails.push({ email: email, date: new Date().toISOString() });
-        localStorage.setItem('subscribed_emails', JSON.stringify(emails));
+        if (submitBtn) submitBtn.disabled = true;
 
-        emailInput.value = '';
-        toast.classList.add('show');
-        setTimeout(() => {
-          toast.classList.remove('show');
-        }, 4500);
+        const formData = new FormData();
+        formData.append('email', email);
+
+        fetch('https://script.google.com/macros/s/AKfycbwHSNOIDWplXZAIkHWCNSpXhPhSeViGRHyeF9dgM50gXzdsvu-dEWJUBcOk_lpRhiU-SA/exec', {
+          method: 'POST',
+          mode: 'no-cors',
+          body: formData
+        }).catch(function(err) {
+          console.warn('Envío registrado con posible advertencia de red:', err);
+        }).finally(function() {
+          emailInput.value = '';
+          if (submitBtn) submitBtn.disabled = false;
+
+          toast.classList.add('show');
+          setTimeout(() => {
+            toast.classList.remove('show');
+          }, 4500);
+        });
       }
     });
   </script>
