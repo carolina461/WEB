@@ -360,13 +360,13 @@
       if (email) {
         if (submitBtn) submitBtn.disabled = true;
 
-        const formData = new FormData();
-        formData.append('email', email);
+        const params = new URLSearchParams();
+        params.append('email', email);
 
         fetch('https://script.google.com/macros/s/AKfycbwHSNOIDWplXZAIkHWCNSpXhPhSeViGRHyeF9dgM50gXzdsvu-dEWJUBcOk_lpRhiU-SA/exec', {
           method: 'POST',
           mode: 'no-cors',
-          body: formData
+          body: params
         }).catch(function(err) {
           console.warn('Envío registrado con posible advertencia de red:', err);
         }).finally(function() {
