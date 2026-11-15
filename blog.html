@@ -88,42 +88,6 @@
         Un espacio de análisis e investigación sobre las constantes modificaciones tributarias, circulares de la DIAN, jurisprudencia contable y estrategias de finanzas prácticas para empresarios.
       </p>
 
-      <!-- Banner de Anuncio 'En Construcción' -->
-      <div class="construction-banner">
-        <h2>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-            <line x1="12" y1="9" x2="12" y2="13"></line>
-            <line x1="12" y1="17" x2="12.01" y2="17"></line>
-          </svg>
-          Blog Corporativo En Construcción
-        </h2>
-        <p>Estamos redactando nuestros primeros artículos de fondo, plantillas de cálculo descargables y guías prácticas para el cierre fiscal. Te invitamos a suscribirte para recibir las primicias editoriales.</p>
-      </div>
-
-      <!-- Countdown -->
-      <div class="countdown-container">
-        <div class="countdown-item">
-          <span class="countdown-val" id="days">00</span>
-          <span class="countdown-lbl">Días</span>
-        </div>
-        <span class="countdown-divider">:</span>
-        <div class="countdown-item">
-          <span class="countdown-val" id="hours">00</span>
-          <span class="countdown-lbl">Horas</span>
-        </div>
-        <span class="countdown-divider">:</span>
-        <div class="countdown-item">
-          <span class="countdown-val" id="minutes">00</span>
-          <span class="countdown-lbl">Minutos</span>
-        </div>
-        <span class="countdown-divider">:</span>
-        <div class="countdown-item">
-          <span class="countdown-val" id="seconds">00</span>
-          <span class="countdown-lbl">Segundos</span>
-        </div>
-      </div>
-
       <!-- Cuadrícula de Categorías Editoriales -->
       <div class="content-grid">
         <div class="card-item">
@@ -315,44 +279,6 @@
 
   <script>
     document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-    const storageKey = 'launch_target_date';
-    let targetTime = localStorage.getItem(storageKey);
-    if (!targetTime) {
-      const now = new Date();
-      now.setDate(now.getDate() + 25);
-      now.setHours(10, 0, 0, 0);
-      targetTime = now.getTime();
-      localStorage.setItem(storageKey, targetTime);
-    } else {
-      targetTime = parseInt(targetTime, 10);
-    }
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetTime - now;
-
-      if (distance <= 0) {
-        document.getElementById('days').textContent = '00';
-        document.getElementById('hours').textContent = '00';
-        document.getElementById('minutes').textContent = '00';
-        document.getElementById('seconds').textContent = '00';
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById('days').textContent = String(days).padStart(2, '0');
-      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
 
     const form = document.getElementById('notifyForm');
     const emailInput = document.getElementById('emailInput');
