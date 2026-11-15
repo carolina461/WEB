@@ -98,26 +98,26 @@ header {
   color: #FFFFFF;
 }
 
-/* Logo del encabezado: resalta en oro metálico original las letras y círculos */
+/* Logo del encabezado con su fondo original y el dorado resaltado */
 .brand-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
   overflow: hidden;
-  background: radial-gradient(circle, #021a3e 0%, var(--navy-main) 100%);
+  background: #02122c;
   border: 1.5px solid var(--gold-base);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45), 0 0 16px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), 0 0 14px rgba(212, 175, 55, 0.25);
   transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
   flex-shrink: 0;
 }
 
 .brand:hover .brand-icon {
-  transform: scale(1.08);
+  transform: scale(1.06);
   border-color: var(--gold-light);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55), 0 0 22px rgba(212, 175, 55, 0.55);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.45);
 }
 
 .brand-icon img {
@@ -125,14 +125,14 @@ header {
   height: 100%;
   object-fit: cover;
   display: block;
-  /* Destacar el dorado original de letras y círculos con brillo y contraste enriquecido */
-  filter: contrast(1.18) brightness(1.12) saturate(1.22) drop-shadow(0 0 3px rgba(212, 175, 55, 0.4));
+  /* Mantiene el fondo original intacto y resalta el brillo y la riqueza del oro */
+  filter: contrast(1.15) brightness(1.1) saturate(1.2);
   transition: filter 0.35s ease, transform 0.35s ease;
 }
 
 .brand:hover .brand-icon img {
-  filter: contrast(1.25) brightness(1.22) saturate(1.35) drop-shadow(0 0 6px rgba(243, 229, 171, 0.6));
-  transform: scale(1.04);
+  filter: contrast(1.2) brightness(1.18) saturate(1.3);
+  transform: scale(1.03);
 }
 
 .brand-name {
