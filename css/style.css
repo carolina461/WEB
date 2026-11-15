@@ -38,7 +38,7 @@
    Cuerpo / Body: Sin color de fondo aplicado
    ======================================================== */
 body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   color: var(--text-main);
   min-height: 100vh;
   display: flex;
@@ -47,6 +47,13 @@ body {
   position: relative;
   overflow-x: hidden;
   /* Sin background-color ni background-image */
+}
+
+/* Tipografía display para títulos principales */
+h1, h2, h3,
+.hero-title,
+.brand-name .main-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
 .container {
@@ -65,19 +72,18 @@ body {
 .header-wrapper {
   width: 100%;
   background-color: var(--navy-main);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.22);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   position: sticky;
   top: 0;
   z-index: 50;
-  backdrop-filter: blur(12px);
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 0;
+  padding: 1rem 0;
   gap: 1.5rem;
   width: 100%;
   max-width: 1200px;
@@ -87,30 +93,28 @@ header {
 .brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   text-decoration: none;
   color: #FFFFFF;
 }
 
+/* Logo que se funde con el fondo azul marino */
 .brand-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
   overflow: hidden;
-  background: #02122c;
-  border: 1.5px solid var(--gold-base);
+  background: var(--navy-main);
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), 0 0 14px rgba(212, 175, 55, 0.25);
-  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
   flex-shrink: 0;
+  mix-blend-mode: normal;
 }
 
 .brand:hover .brand-icon {
-  transform: scale(1.06);
-  border-color: var(--gold-light);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.45);
+  opacity: 0.88;
 }
 
 .brand-icon img {
@@ -118,42 +122,44 @@ header {
   height: 100%;
   object-fit: cover;
   display: block;
+  mix-blend-mode: luminosity;
+  filter: brightness(1.05) contrast(0.95);
+  transition: filter 0.3s ease;
+}
+
+.brand:hover .brand-icon img {
+  filter: brightness(1.15) contrast(1) saturate(1.1);
+  mix-blend-mode: normal;
 }
 
 .brand-name {
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 
-/* Título principal 'Asesoría CT' en oro metálico con brillo continuo */
+/* Nombre de marca: tipografía serif elegante */
 .brand-name .main-title {
-  font-size: 1.45rem;
-  font-weight: 800;
-  letter-spacing: -0.4px;
-  background: var(--gold-gradient);
-  background-size: 220% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: goldMetallicShine 7s linear infinite;
-  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.25));
-  line-height: 1.15;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--gold-light);
+  line-height: 1.1;
+  -webkit-text-fill-color: unset;
+  background: none;
+  animation: none;
+  filter: none;
 }
 
-/* Subtítulo 'Confianza • Compromiso • Resultados' en tono dorado suave */
+/* Subtítulo: simple, sin mayúsculas agresivas */
 .brand-name .sub-title {
-  font-size: 0.74rem;
-  text-transform: uppercase;
-  letter-spacing: 1.9px;
-  color: var(--gold-soft);
-  font-weight: 600;
-  margin-top: 3px;
-  opacity: 0.92;
-}
-
-@keyframes goldMetallicShine {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.8px;
+  color: rgba(212, 175, 55, 0.65);
+  font-weight: 400;
+  margin-top: 0;
 }
 
 .nav-container {
@@ -165,38 +171,37 @@ header {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 1.8rem;
+  gap: 2rem;
   list-style: none;
 }
 
-/* Letras del menú doradas (#D4AF37) e iluminándose a (#F3E5AB) en hover */
+/* Menú de navegación: más limpio, sin text-shadow agresivo */
 .nav-link {
-  color: var(--gold-base);
+  color: rgba(243, 229, 171, 0.8);
   text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  transition: color 0.25s ease;
   white-space: nowrap;
   position: relative;
-  padding: 4px 2px;
+  padding: 4px 0;
 }
 
 .nav-link:hover,
 .nav-link.active {
   color: var(--gold-light);
-  text-shadow: 0 0 14px rgba(243, 229, 171, 0.65);
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -1px;
   left: 0;
   width: 0%;
-  height: 2px;
-  background: var(--gold-gradient);
+  height: 1px;
+  background: var(--gold-base);
   transition: width 0.3s ease;
-  border-radius: 2px;
 }
 
 .nav-link:hover::after,
@@ -205,70 +210,57 @@ header {
 }
 
 .nav-link-cta {
-  padding: 8px 18px;
-  border: 1.5px solid var(--gold-base);
-  border-radius: 100px;
-  background: rgba(2, 27, 61, 0.7);
+  padding: 7px 18px;
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  border-radius: 6px;
+  background: transparent;
   color: var(--gold-light) !important;
-  font-weight: 700;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3), 0 0 10px rgba(212, 175, 55, 0.2);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
 }
 
 .nav-link-cta:hover,
 .nav-link-cta.active {
-  background: var(--gold-gradient);
-  color: #021B3D !important;
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--gold-light) !important;
   text-shadow: none !important;
-  border-color: var(--gold-light);
-  box-shadow: 0 6px 22px rgba(212, 175, 55, 0.45);
-  transform: translateY(-2px);
+  border-color: var(--gold-base);
+  box-shadow: none;
+  transform: none;
 }
 
 .nav-link-cta::after {
   display: none;
 }
 
-/* Insignia discreta en borde dorado: 'En Construcción' */
+/* Insignia de estado */
 .badge-status {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  background: rgba(170, 124, 17, 0.14);
-  border: 1.2px solid var(--gold-base);
-  border-radius: 100px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--gold-light);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.16);
+  gap: 7px;
+  padding: 5px 13px;
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(243, 229, 171, 0.65);
   white-space: nowrap;
+  letter-spacing: 0.3px;
 }
 
 .status-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: var(--gold-base);
-  position: relative;
-  box-shadow: 0 0 8px var(--gold-light);
+  opacity: 0.75;
+  flex-shrink: 0;
 }
 
 .status-dot::after {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: rgba(212, 175, 55, 0.5);
-  animation: pulseDotGold 2.2s ease-out infinite;
-}
-
-@keyframes pulseDotGold {
-  0% { transform: scale(0.6); opacity: 1; }
-  100% { transform: scale(2.3); opacity: 0; }
+  display: none;
 }
 
 /* ========================================================
