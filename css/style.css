@@ -98,23 +98,26 @@ header {
   color: #FFFFFF;
 }
 
-/* Logo que se funde con el fondo azul marino */
+/* Logo del encabezado: resalta en oro metálico original las letras y círculos */
 .brand-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
   overflow: hidden;
-  background: var(--navy-main);
-  border: none;
+  background: radial-gradient(circle, #021a3e 0%, var(--navy-main) 100%);
+  border: 1.5px solid var(--gold-base);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45), 0 0 16px rgba(212, 175, 55, 0.35);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
   flex-shrink: 0;
-  mix-blend-mode: normal;
 }
 
 .brand:hover .brand-icon {
-  opacity: 0.88;
+  transform: scale(1.08);
+  border-color: var(--gold-light);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55), 0 0 22px rgba(212, 175, 55, 0.55);
 }
 
 .brand-icon img {
@@ -122,14 +125,14 @@ header {
   height: 100%;
   object-fit: cover;
   display: block;
-  mix-blend-mode: luminosity;
-  filter: brightness(1.05) contrast(0.95);
-  transition: filter 0.3s ease;
+  /* Destacar el dorado original de letras y círculos con brillo y contraste enriquecido */
+  filter: contrast(1.18) brightness(1.12) saturate(1.22) drop-shadow(0 0 3px rgba(212, 175, 55, 0.4));
+  transition: filter 0.35s ease, transform 0.35s ease;
 }
 
 .brand:hover .brand-icon img {
-  filter: brightness(1.15) contrast(1) saturate(1.1);
-  mix-blend-mode: normal;
+  filter: contrast(1.25) brightness(1.22) saturate(1.35) drop-shadow(0 0 6px rgba(243, 229, 171, 0.6));
+  transform: scale(1.04);
 }
 
 .brand-name {
@@ -138,28 +141,36 @@ header {
   gap: 2px;
 }
 
-/* Nombre de marca: tipografía serif elegante */
+/* Título principal 'Asesoría CT' en el dorado original brillante con sutil reflejo */
 .brand-name .main-title {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.5rem;
+  font-size: 1.55rem;
   font-weight: 700;
   letter-spacing: 0.5px;
-  color: var(--gold-light);
-  line-height: 1.1;
-  -webkit-text-fill-color: unset;
-  background: none;
-  animation: none;
-  filter: none;
+  background: var(--gold-gradient);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.15;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.25));
+  animation: goldMetallicShine 7s linear infinite;
 }
 
-/* Subtítulo: simple, sin mayúsculas agresivas */
+/* Subtítulo 'Confianza • Compromiso • Resultados' en dorado suave */
 .brand-name .sub-title {
   font-family: 'Inter', sans-serif;
   font-size: 0.72rem;
-  letter-spacing: 0.8px;
-  color: rgba(212, 175, 55, 0.65);
-  font-weight: 400;
+  letter-spacing: 1.2px;
+  color: var(--gold-soft);
+  font-weight: 500;
   margin-top: 0;
+  opacity: 0.9;
+}
+
+@keyframes goldMetallicShine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .nav-container {
