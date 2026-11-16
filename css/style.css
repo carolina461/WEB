@@ -18,6 +18,14 @@
   --gold-border: rgba(212, 175, 55, 0.45);
   --gold-border-hover: rgba(170, 124, 17, 0.85);
 
+  /* Paleta Corporativa Asesoría CT (Colores Clave) */
+  --color-forest: #1B6B5A;
+  --color-forest-hover: #145244;
+  --color-navy-deep: #13293D;
+  --color-terracotta: #D97736;
+  --color-terracotta-hover: #BF6225;
+  --color-card-bg: #FAF9F6;
+
   /* Tipografía de Alto Contraste */
   --text-main: #0F172A;
   --text-secondary: #334155;
@@ -38,14 +46,15 @@
    Cuerpo / Body: Sin color de fondo aplicado
    ======================================================== */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
   color: var(--text-main);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  line-height: 1.6;
+  line-height: 1.65;
   position: relative;
   overflow-x: hidden;
+  letter-spacing: -0.01em;
   /* Sin background-color ni background-image */
 }
 
@@ -390,24 +399,25 @@ main {
   45%, 100% { transform: translateX(140%) rotate(25deg); opacity: 0; }
 }
 
-/* Pastilla de Anuncio 'En Construcción' */
+/* Pastilla de Identificación Superior */
 .pill-hero {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 7px 20px;
-  border: 1.5px solid var(--gold-base);
+  padding: 6px 18px;
+  border: 1px solid rgba(27, 107, 90, 0.25);
+  background: rgba(27, 107, 90, 0.06);
   border-radius: 100px;
-  color: var(--gold-deep);
-  font-size: 0.85rem;
+  color: var(--color-forest);
+  font-size: 0.8rem;
   font-weight: 700;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 1.2px;
 }
 
 .pill-hero svg {
-  stroke: var(--gold-dark);
+  stroke: var(--color-forest);
 }
 
 /* Título de Página */
@@ -470,13 +480,25 @@ main {
 .booking-section {
   width: 100%;
   max-width: 1160px;
-  background: #FFFFFF;
-  border: 1.5px solid var(--gold-border);
+  background-color: var(--color-card-bg);
+  border: 1px solid rgba(212, 175, 55, 0.25);
   border-radius: var(--radius-lg);
   padding: 3rem 2.5rem;
   margin-bottom: 4rem;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.booking-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-terracotta), var(--gold-base), var(--color-forest));
 }
 
 .booking-header {
@@ -484,14 +506,19 @@ main {
 }
 
 .booking-title {
-  font-size: 1.85rem;
-  color: var(--gold-deep);
-  font-weight: 800;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.1rem;
+  color: var(--color-navy-deep);
+  font-weight: 700;
   margin-bottom: 0.65rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
+}
+
+.booking-title svg {
+  color: var(--color-terracotta);
 }
 
 .booking-desc {
@@ -508,7 +535,8 @@ main {
   border-radius: var(--radius-md);
   overflow: hidden;
   background: #ffffff;
-  border: 1px solid rgba(170, 124, 17, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
 }
 
 .booking-calendar-wrapper iframe {
@@ -594,12 +622,14 @@ main {
 }
 
 .card-item {
-  border: 1.2px solid var(--gold-border);
+  background-color: var(--color-card-bg);
+  border: 1px solid rgba(212, 175, 55, 0.22);
   border-radius: var(--radius-md);
-  padding: 2rem 1.6rem;
-  transition: all 0.3s ease;
+  padding: 2.2rem 1.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
 }
 
 .card-item::before {
@@ -609,62 +639,92 @@ main {
   left: 0;
   width: 100%;
   height: 3px;
-  background: var(--gold-gradient);
+  background: linear-gradient(90deg, var(--color-forest), var(--gold-base));
+  opacity: 0.85;
+  transition: height 0.25s ease;
 }
 
 .card-item:hover {
-  border-color: var(--gold-border-hover);
+  border-color: rgba(27, 107, 90, 0.35);
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 28px rgba(19, 41, 61, 0.08);
+}
+
+.card-item:hover::before {
+  height: 4px;
 }
 
 .card-icon {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  border: 1.5px solid var(--gold-dark);
+  background: rgba(27, 107, 90, 0.08);
+  border: 1px solid rgba(27, 107, 90, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.25rem;
-  color: var(--gold-dark);
+  color: var(--color-forest);
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.card-item:hover .card-icon {
+  transform: scale(1.06);
+  background: rgba(27, 107, 90, 0.14);
 }
 
 .card-item h3 {
-  font-size: 1.2rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.35rem;
   font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 0.6rem;
+  color: var(--color-navy-deep);
+  margin-bottom: 0.65rem;
+  line-height: 1.3;
 }
 
 .card-item p {
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.62;
 }
 
-/* Formulario de Notificación */
+/* Formulario de Notificación / Acción */
 .action-panel {
   width: 100%;
   max-width: 680px;
-  border: 1.5px solid var(--gold-border);
+  background-color: var(--color-card-bg);
+  border: 1px solid rgba(212, 175, 55, 0.25);
   border-radius: var(--radius-lg);
-  padding: 2.25rem 2rem;
-  margin-bottom: 1.5rem;
+  padding: 2.5rem 2.25rem;
+  margin-bottom: 2rem;
   text-align: center;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.action-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-forest), var(--gold-base), var(--color-terracotta));
 }
 
 .action-panel h2 {
-  font-size: 1.38rem;
-  font-weight: 800;
-  color: var(--text-main);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--color-navy-deep);
   margin-bottom: 0.5rem;
 }
 
 .action-panel p {
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .subscribe-form {
@@ -698,24 +758,24 @@ main {
 .subscribe-input {
   flex: 1;
   padding: 0.85rem 1.25rem;
-  border: 1.5px solid var(--gold-border);
+  border: 1px solid rgba(212, 175, 55, 0.35);
   border-radius: var(--radius-sm);
   color: var(--text-main);
   font-family: inherit;
   font-size: 0.95rem;
   outline: none;
   transition: all 0.25s ease;
-  background: transparent;
+  background: #FFFFFF;
 }
 
 .subscribe-input:focus {
-  border-color: var(--gold-dark);
-  box-shadow: 0 0 0 3px rgba(170, 124, 17, 0.2);
+  border-color: var(--color-forest);
+  box-shadow: 0 0 0 3px rgba(27, 107, 90, 0.15);
 }
 
 .subscribe-btn {
   padding: 0.85rem 1.75rem;
-  border: 1.5px solid var(--gold-dark);
+  border: none;
   border-radius: var(--radius-sm);
   font-family: inherit;
   font-size: 0.95rem;
@@ -726,16 +786,15 @@ main {
   gap: 8px;
   transition: all 0.25s ease;
   white-space: nowrap;
-  background: transparent;
-  color: var(--gold-dark);
+  background-color: var(--color-forest);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(27, 107, 90, 0.25);
 }
 
 .subscribe-btn:hover {
-  background: var(--gold-gradient);
-  color: #FFFFFF;
-  border-color: transparent;
+  background-color: var(--color-forest-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(170, 124, 17, 0.3);
+  box-shadow: 0 6px 16px rgba(27, 107, 90, 0.35);
 }
 
 .subscribe-btn svg {
@@ -777,26 +836,29 @@ main {
 }
 
 .email-link {
-  color: var(--gold-dark);
+  color: var(--color-forest);
   text-decoration: none;
   font-weight: 700;
+  transition: color 0.2s ease;
 }
 
 .email-link:hover {
-  color: var(--gold-deep);
+  color: var(--color-navy-deep);
   text-decoration: underline;
 }
 
 /* ========================================================
-   Pie de Página (Footer): Sin color de fondo, línea dorada
+   Pie de Página (Footer): Fondo #031838 Corporativo
    ======================================================== */
 footer {
   position: relative;
-  padding: 3.5rem 0 2rem;
+  padding: 4rem 0 2rem;
   margin-top: auto;
   width: 100%;
-  border-top: 1.5px solid var(--gold-base);
-  /* Sin background-color */
+  background-color: var(--navy-main);
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.2);
+  color: #FAF9F6;
 }
 
 .footer-content {
@@ -813,11 +875,11 @@ footer {
 }
 
 .footer-col-title {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--gold-deep);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gold-light);
   letter-spacing: 0.5px;
-  text-transform: uppercase;
   position: relative;
   padding-bottom: 8px;
 }
@@ -847,7 +909,7 @@ footer {
 
 .footer-desc {
   font-size: 0.92rem;
-  color: var(--text-secondary);
+  color: rgba(243, 229, 171, 0.8);
   line-height: 1.6;
   max-width: 320px;
 }
@@ -864,22 +926,22 @@ footer {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--text-secondary);
+  color: rgba(243, 229, 171, 0.85);
 }
 
 .footer-contact-item svg {
-  stroke: var(--gold-dark);
+  stroke: var(--gold-light);
   flex-shrink: 0;
 }
 
 .footer-contact-item a {
-  color: var(--text-secondary);
+  color: rgba(243, 229, 171, 0.85);
   text-decoration: none;
   transition: all 0.25s ease;
 }
 
 .footer-contact-item a:hover {
-  color: var(--gold-deep);
+  color: #FFFFFF;
   text-decoration: underline;
 }
 
@@ -894,14 +956,14 @@ footer {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  border: 1.5px solid var(--gold-dark);
-  color: var(--gold-dark);
+  border: 1.5px solid var(--gold-light);
+  color: var(--gold-light);
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   transition: all 0.25s ease;
-  background: transparent;
+  background: rgba(243, 229, 171, 0.05);
 }
 
 .social-btn svg {
@@ -912,20 +974,20 @@ footer {
 
 .social-btn:hover {
   background: var(--gold-gradient);
-  color: #FFFFFF;
+  color: var(--navy-main);
   border-color: transparent;
   transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(170, 124, 17, 0.35);
+  box-shadow: 0 4px 15px rgba(243, 229, 171, 0.4);
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--gold-border);
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
   padding-top: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 0.88rem;
-  color: var(--text-muted);
+  color: rgba(243, 229, 171, 0.7);
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -937,13 +999,13 @@ footer {
 }
 
 .footer-legal-links a {
-  color: var(--text-muted);
+  color: rgba(243, 229, 171, 0.7);
   text-decoration: none;
   transition: color 0.25s ease;
 }
 
 .footer-legal-links a:hover {
-  color: var(--gold-deep);
+  color: var(--gold-light);
   text-decoration: underline;
 }
 
@@ -1005,17 +1067,19 @@ footer {
   align-items: center;
   gap: 8px;
   padding: 8px 18px;
-  border: 1.5px solid var(--gold-base);
+  background-color: var(--color-card-bg);
+  border: 1px solid rgba(27, 107, 90, 0.25);
   border-radius: 100px;
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--gold-deep);
+  color: var(--color-forest);
   letter-spacing: 0.5px;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
 }
 
 .about-credential svg {
-  stroke: var(--gold-dark);
+  stroke: var(--color-forest);
   flex-shrink: 0;
 }
 
@@ -1053,7 +1117,7 @@ footer {
 }
 
 .about-highlights li strong {
-  color: var(--text-main);
+  color: var(--color-navy-deep);
 }
 
 .about-highlight-icon {
@@ -1061,11 +1125,12 @@ footer {
   width: 38px;
   height: 38px;
   border-radius: 10px;
-  border: 1.5px solid var(--gold-dark);
+  background: rgba(27, 107, 90, 0.08);
+  border: 1px solid rgba(27, 107, 90, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--gold-dark);
+  color: var(--color-forest);
   margin-top: 2px;
 }
 
@@ -1074,28 +1139,29 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 0.9rem 2rem;
-  background: var(--gold-gradient);
-  color: #021B3D;
+  padding: 0.95rem 2.25rem;
+  background-color: var(--color-terracotta);
+  color: #FFFFFF !important;
   border-radius: 100px;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 0.98rem;
   text-decoration: none;
   border: none;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   align-self: flex-start;
-  box-shadow: 0 4px 18px rgba(170, 124, 17, 0.28);
+  box-shadow: 0 4px 18px rgba(217, 119, 54, 0.35);
   letter-spacing: 0.3px;
 }
 
 .about-cta-btn:hover {
+  background-color: var(--color-terracotta-hover);
   transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(170, 124, 17, 0.45);
+  box-shadow: 0 8px 26px rgba(217, 119, 54, 0.45);
 }
 
 .about-cta-btn svg {
-  stroke: #021B3D;
+  stroke: #FFFFFF;
   transition: transform 0.25s ease;
 }
 
