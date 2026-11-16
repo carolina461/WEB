@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirigiendo... | Asesoría CT</title>
+  <script>
+    (function() {
+      // Manejar rutas limpias tipo /blog/slug o /slug en GitHub Pages
+      var path = window.location.pathname;
+      var clean = path.replace(/\/$/, '');
+      var parts = clean.split('/').filter(Boolean);
+      
+      var slug = null;
+      var blogIdx = parts.indexOf('blog');
+      if (blogIdx !== -1 && parts[blogIdx + 1]) {
+        slug = parts[blogIdx + 1].replace(/\.html$/, '');
+      } else if (parts.length > 0) {
+        var last = parts[parts.length - 1].replace(/\.html$/, '');
+        if (last !== 'index' && last !== 'blog') {
+          slug = last;
+        }
+      }
+
+      if (slug) {
+        window.location.replace('/blog.html?slug=' + encodeURIComponent(slug));
+      } else {
+        window.location.replace('/blog.html');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirigiendo a <a href="/blog.html">Asesoría CT</a>...</p>
+</body>
+</html>
