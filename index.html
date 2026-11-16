@@ -141,6 +141,34 @@
           <span>o escríbenos a <a href="mailto:contacto@asesoriact.com" class="email-link">contacto@asesoriact.com</a></span>
         </div>
       </div>
+
+      <!-- Sección de Actualidad Tributaria y Normativa en Español Claro (3 Artículos Recientes) -->
+      <section class="home-blog-section" aria-labelledby="homeBlogHeading">
+        <div class="section-header-block">
+          <div class="section-tag">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+              <path d="M6 6h10"></path>
+              <path d="M6 10h10"></path>
+            </svg>
+            <span>Conocimiento &bull; Actualidad Fiscal</span>
+          </div>
+          <h2 class="section-title" id="homeBlogHeading">Actualidad Tributaria y Normativa en Español Claro</h2>
+          <p class="section-desc">Artículos prácticos, análisis de reformas e interpretaciones de la DIAN explicadas paso a paso con ejemplos de la vida real para empresarios en Colombia.</p>
+        </div>
+
+        <div class="blog-cards-grid" id="homeBlogCardsContainer">
+          <!-- Renderizado dinámico de los 3 artículos más recientes -->
+        </div>
+
+        <a href="blog.html" class="blog-section-cta">
+          <span>Ver todos los artículos en el Blog</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </section>
     </main>
   </div>
 
@@ -245,8 +273,37 @@
     </div>
   </div>
 
+  <script src="js/blog-data.js"></script>
   <script>
     document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Renderizar las 3 tarjetas más recientes en la sección de inicio
+    function renderHomeBlogCards() {
+      const container = document.getElementById('homeBlogCardsContainer');
+      if (!container || !window.getBlogArticles) return;
+
+      const articles = window.getBlogArticles().slice(0, 3);
+      container.innerHTML = articles.map(article => `
+        <article class="blog-card" onclick="window.location.href='blog.html?slug=${encodeURIComponent(article.slug)}'" style="cursor: pointer;">
+          <div>
+            <div class="blog-card-meta">
+              <span class="blog-category-badge">${article.category}</span>
+              <time class="blog-card-date" datetime="${article.date}">${window.formatBlogDate(article.date)}</time>
+            </div>
+            <h3 class="blog-card-title">${article.title}</h3>
+            <p class="blog-card-summary">${article.summary}</p>
+          </div>
+          <div>
+            <a href="blog.html?slug=${encodeURIComponent(article.slug)}" class="blog-card-link" onclick="event.stopPropagation();">
+              <span>Leer artículo completo</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    renderHomeBlogCards();
 
     const form = document.getElementById('notifyForm');
     const nombreInput = document.getElementById('nombreInput');
