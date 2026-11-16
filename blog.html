@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CO">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="pageTitle">Blog & Actualidad Tributaria | Asesoría CT</title>
-  <meta name="description" id="pageDescription" content="Artículos contables, reformas tributarias y guías prácticas explicadas en español claro con ejemplos reales por Asesoría CT.">
+  <title id="pageTitle">Blog & Actualidad Tributaria en Colombia | Asesoría CT</title>
+  <meta name="description" id="pageDescription" content="Artículos contables, reformas tributarias y guías prácticas explicadas en español claro con ejemplos reales por Asesoría CT. Criterio experto en Colombia.">
+  <link rel="canonical" id="canonicalUrl" href="https://asesoriact.com/blog.html">
   <link rel="icon" type="image/jpeg" href="imagenes/LOGO CT.jpeg">
+
+  <!-- Open Graph / Redes Sociales -->
+  <meta property="og:type" id="ogType" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:site_name" content="Asesoría CT">
+  <meta property="og:url" id="ogUrl" content="https://asesoriact.com/blog.html">
+  <meta property="og:title" id="ogTitle" content="Blog & Actualidad Tributaria en Colombia | Asesoría CT">
+  <meta property="og:description" id="ogDescription" content="Análisis e investigación sobre requerimientos de la DIAN, normatividad laboral UGPP y planeación fiscal en Colombia.">
+  <meta property="og:image" id="ogImage" content="https://asesoriact.com/imagenes/LOGO%20CT.jpeg">
+  <meta property="og:image:alt" id="ogImageAlt" content="Blog Asesoría CT">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" id="twitterTitle" content="Blog & Actualidad Tributaria en Colombia | Asesoría CT">
+  <meta name="twitter:description" id="twitterDescription" content="Análisis e investigación sobre normatividad DIAN y finanzas empresariales.">
+  <meta name="twitter:image" id="twitterImage" content="https://asesoriact.com/imagenes/LOGO%20CT.jpeg">
 
   <!-- Google Fonts: Cormorant Garamond, Inter & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +31,24 @@
 
   <!-- Hoja de Estilos Compartida -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Schema.org JSON-LD para Blog / Artículo dinámico -->
+  <script type="application/ld+json" id="blogSchema">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://asesoriact.com/blog.html#blog",
+    "name": "Blog de Actualidad Contable y Tributaria | Asesoría CT",
+    "url": "https://asesoriact.com/blog.html",
+    "description": "Artículos, normativas DIAN y guías financieras explicadas con criterio experto para empresarios y comerciantes en Colombia.",
+    "publisher": {
+      "@type": "AccountingService",
+      "name": "Asesoría CT",
+      "url": "https://asesoriact.com/",
+      "logo": "https://asesoriact.com/imagenes/LOGO%20CT.jpeg"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -201,7 +236,7 @@
         <div class="footer-col">
           <a href="index.html" class="footer-brand" title="Asesoría CT">
             <div class="brand-icon">
-              <img src="imagenes/LOGO CT.jpeg" alt="Logo Asesoría CT" width="44" height="44">
+              <img src="imagenes/LOGO CT.jpeg" alt="Logo Asesoría CT en pie de página" width="44" height="44" loading="lazy">
             </div>
             <div class="brand-name">
               <span class="main-title">Asesoría CT</span>
@@ -362,6 +397,85 @@
       `).join('');
     }
 
+    function updateBlogMetaTags(article, slug) {
+      const canonicalEl = document.getElementById('canonicalUrl');
+      const ogUrlEl = document.getElementById('ogUrl');
+      const ogTitleEl = document.getElementById('ogTitle');
+      const ogDescEl = document.getElementById('ogDescription');
+      const twitterTitleEl = document.getElementById('twitterTitle');
+      const twitterDescEl = document.getElementById('twitterDescription');
+      const schemaEl = document.getElementById('blogSchema');
+
+      if (article && slug) {
+        const articleUrl = `https://asesoriact.com/blog/${slug}`;
+        if (canonicalEl) canonicalEl.setAttribute('href', articleUrl);
+        if (ogUrlEl) ogUrlEl.setAttribute('content', articleUrl);
+        if (ogTitleEl) ogTitleEl.setAttribute('content', `${article.title} | Blog Asesoría CT`);
+        if (ogDescEl) ogDescEl.setAttribute('content', article.summary);
+        if (twitterTitleEl) twitterTitleEl.setAttribute('content', `${article.title} | Blog Asesoría CT`);
+        if (twitterDescEl) twitterDescEl.setAttribute('content', article.summary);
+
+        // Inyectar Schema.org de tipo Article dinámico
+        if (schemaEl) {
+          const articleSchema = {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": articleUrl
+            },
+            "headline": article.title,
+            "description": article.summary,
+            "image": "https://asesoriact.com/imagenes/LOGO%20CT.jpeg",
+            "datePublished": article.date,
+            "dateModified": article.date,
+            "author": {
+              "@type": "AccountingService",
+              "name": "Asesoría CT",
+              "url": "https://asesoriact.com/"
+            },
+            "publisher": {
+              "@type": "AccountingService",
+              "name": "Asesoría CT",
+              "url": "https://asesoriact.com/",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://asesoriact.com/imagenes/LOGO%20CT.jpeg"
+              }
+            },
+            "articleSection": article.category
+          };
+          schemaEl.textContent = JSON.stringify(articleSchema, null, 2);
+        }
+      } else {
+        const blogUrl = 'https://asesoriact.com/blog.html';
+        if (canonicalEl) canonicalEl.setAttribute('href', blogUrl);
+        if (ogUrlEl) ogUrlEl.setAttribute('content', blogUrl);
+        if (ogTitleEl) ogTitleEl.setAttribute('content', 'Blog & Actualidad Tributaria en Colombia | Asesoría CT');
+        if (ogDescEl) ogDescEl.setAttribute('content', 'Análisis e investigación sobre requerimientos de la DIAN, normatividad laboral UGPP y planeación fiscal en Colombia.');
+        if (twitterTitleEl) twitterTitleEl.setAttribute('content', 'Blog & Actualidad Tributaria en Colombia | Asesoría CT');
+        if (twitterDescEl) twitterDescEl.setAttribute('content', 'Análisis e investigación sobre normatividad DIAN y finanzas empresariales.');
+
+        if (schemaEl) {
+          const blogSchema = {
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "@id": "https://asesoriact.com/blog.html#blog",
+            "name": "Blog de Actualidad Contable y Tributaria | Asesoría CT",
+            "url": "https://asesoriact.com/blog.html",
+            "description": "Artículos, normativas DIAN y guías financieras explicadas con criterio experto para empresarios y comerciantes en Colombia.",
+            "publisher": {
+              "@type": "AccountingService",
+              "name": "Asesoría CT",
+              "url": "https://asesoriact.com/",
+              "logo": "https://asesoriact.com/imagenes/LOGO%20CT.jpeg"
+            }
+          };
+          schemaEl.textContent = JSON.stringify(blogSchema, null, 2);
+        }
+      }
+    }
+
     function renderSingleArticle(slug) {
       const listView = document.getElementById('blogListView');
       const singleView = document.getElementById('blogSingleView');
@@ -377,9 +491,10 @@
       singleView.style.display = 'block';
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      // Actualizar datos de cabecera y SEO
+      // Actualizar datos de cabecera y SEO dinámico
       document.getElementById('pageTitle').textContent = `${article.title} | Blog Asesoría CT`;
       document.getElementById('pageDescription').setAttribute('content', article.summary);
+      updateBlogMetaTags(article, slug);
 
       document.getElementById('singleCategory').textContent = article.category;
       const dateEl = document.getElementById('singleDate');
@@ -401,8 +516,9 @@
       singleView.style.display = 'none';
       listView.style.display = 'block';
 
-      document.getElementById('pageTitle').textContent = 'Blog & Actualidad Tributaria | Asesoría CT';
-      document.getElementById('pageDescription').setAttribute('content', 'Artículos contables, reformas tributarias y guías prácticas explicadas en español claro con ejemplos reales por Asesoría CT.');
+      document.getElementById('pageTitle').textContent = 'Blog & Actualidad Tributaria en Colombia | Asesoría CT';
+      document.getElementById('pageDescription').setAttribute('content', 'Artículos contables, reformas tributarias y guías prácticas explicadas en español claro con ejemplos reales por Asesoría CT. Criterio experto en Colombia.');
+      updateBlogMetaTags(null, null);
 
       renderArticlesList(currentCategoryFilter);
     }
