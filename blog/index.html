@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog | Asesoría CT</title>
+  <script>
+    // Redirige al sistema central de blog preservando el slug
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    const slug = pathParts[pathParts.length - 1].replace(/\.html$/, '');
+    if (slug && slug !== 'blog' && slug !== 'index') {
+      window.location.replace('../blog.html?slug=' + encodeURIComponent(slug));
+    } else {
+      window.location.replace('../blog.html');
+    }
+  </script>
+</head>
+<body>
+  <p>Redirigiendo al artículo...</p>
+</body>
+</html>
