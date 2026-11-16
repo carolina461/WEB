@@ -91,7 +91,7 @@ Tener contratos claros, acuerdos de desalarización debidamente firmados y un c�
     slug: "planeacion-iva-bimestral-cuatrimestral-flujo-caja",
     date: "2026-10-28",
     category: "Impuestos",
-    summary: "Descubre cómo elegir el periodo fiscal de IVA correcto y optimizar tus retenciones en la fuente para no desfinanciar tu negocio."
+    summary: "Descubre cómo elegir el periodo fiscal de IVA correcto y optimizar tus retenciones en la fuente para no desfinanciar tu negocio.",
     body: `El Impuesto sobre las Ventas (IVA) es uno de los tributos más delicados para las empresas en Colombia. No solo representa una responsabilidad fiduciaria penalmente sancionable si no se consigna oportunamente (artículo 402 del Código Penal), sino que liquidarlo en una periodicidad equivocada (bimestral en vez de cuatrimestral o viceversa) torna la declaración como legalmente "no presentada", obligando a reliquidar con sanciones por extemporaneidad.
 
 A continuación, revisamos un caso de la práctica profesional diaria para comprender cómo proteger la liquidez de una empresa.
