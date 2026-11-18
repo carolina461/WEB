@@ -41,23 +41,18 @@ Imagina una comercializadora pyme que cierra el año 2026 con una utilidad conta
 
 Al momento de preparar la declaración de renta bajo la tarifa general del 35 % para personas jurídicas:
 
-* **Escenario con soportes en regla:** La empresa tributa sobre su utilidad real de **$180.000.000 COP**, pagando un impuesto de renta de **$63.000.000 COP**.
-
-* **Escenario sin soportes válidos:** La DIAN rechaza la deducción de los **$65.000.000 COP**, elevando la renta líquida gravable a **$245.000.000 COP**. El impuesto sube a **$85.750.000 COP**.
+- **Escenario con soportes en regla:** La empresa tributa sobre su utilidad real de **$180.000.000 COP**, pagando un impuesto de renta de **$63.000.000 COP**.
+- **Escenario sin soportes válidos:** La DIAN rechaza la deducción de los **$65.000.000 COP**, elevando la renta líquida gravable a **$245.000.000 COP**. El impuesto sube a **$85.750.000 COP**.
 
 El resultado es un sobrecosto tributario inmediato de **$22.750.000 COP** en efectivo, sin contar posibles sanciones si el error se detecta en una fiscalización posterior. Detectar esta falla en noviembre permite gestionar los documentos faltantes antes del cierre del ejercicio y salvar ese capital de trabajo.
 
 ***Checklist rápido de prevención antes de cerrar el año***
 
-* **Concilia el 100 % de las cuentas bancarias:** Verifica que los saldos en libros al corte de noviembre coincidan exactamente con los extractos financieros y que no existan partidas conciliatorias antiguas sin aclarar.
-
-* **Audita los terceros sin soporte electrónico:** Genera un listado de todos los pagos realizados en 2026 y confirma que cada uno tenga factura electrónica, documento soporte o planilla de nómina electrónica transmitida.
-
-* **Verifica el cumplimiento de seguridad social (UGPP):** Revisa que los pagos salariales, bonificaciones no salariales (respetando el límite del 40 % del total remunerado) y aportes de independientes estén correctamente liquidados en la PILA.
-
-* **Revisa tus saldos a favor y anticipos de impuestos:** Confirma que los valores registrados por retenciones practicadas, autorretenciones y anticipos de renta coincidan con las declaraciones presentadas ante la DIAN.
-
-* **Actualiza el RUT si hubo cambios operativos:** Si durante 2026 agregaste nuevas actividades económicas, cambiaste de dirección o modificaste responsabilidades fiscales, actualiza el RUT de inmediato para evitar sanciones diarias por datos desactualizados.
+- **Concilia el 100 % de las cuentas bancarias:** Verifica que los saldos en libros al corte de noviembre coincidan exactamente con los extractos financieros y que no existan partidas conciliatorias antiguas sin aclarar.
+- **Audita los terceros sin soporte electrónico:** Genera un listado de todos los pagos realizados en 2026 y confirma que cada uno tenga factura electrónica, documento soporte o planilla de nómina electrónica transmitida.
+- **Verifica el cumplimiento de seguridad social (UGPP):** Revisa que los pagos salariales, bonificaciones no salariales (respetando el límite del 40 % del total remunerado) y aportes de independientes estén correctamente liquidados en la PILA.
+- **Revisa tus saldos a favor y anticipos de impuestos:** Confirma que los valores registrados por retenciones practicadas, autorretenciones y anticipos de renta coincidan con las declaraciones presentadas ante la DIAN.
+- **Actualiza el RUT si hubo cambios operativos:** Si durante 2026 agregaste nuevas actividades económicas, cambiaste de dirección o modificaste responsabilidades fiscales, actualiza el RUT de inmediato para evitar sanciones diarias por datos desactualizados.
 
 ***¿Tu contabilidad está lista para el cierre fiscal 2026?***
 
