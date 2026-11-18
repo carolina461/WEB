@@ -1,9 +1,18 @@
-/**
- * Asesoría CT - Sistema Central de Artículos del Blog
- * Gestiona el catálogo de artículos, almacenamiento y renderizado.
+﻿/**
+ * AsesorÃ­a CT - Sistema Central de ArtÃ­culos del Blog
+ * âš ï¸  ARCHIVO GENERADO AUTOMÃTICAMENTE por scripts/build-blog.ps1
+ *     No editar a mano. Ejecutar: scripts/build-blog.ps1
  */
 
 window.BLOG_DATA = [
+  {
+    title: "Cierre contable y fiscal 2026: cómo blindar tu empresa antes de terminar el año",
+    slug: "cierre-contable-2026-evitar-sanciones-dian-pymes-colombia",
+    date: "2026-11-18",
+    category: "Impuestos",
+    summary: "Prepara el cierre contable y fiscal 2026 de tu pyme en Colombia. Evita sanciones de la DIAN con conciliaciones, soportes electrónicos y NIIF.",
+    file: "content/blog/cierre-contable-y-fiscal-2026-como-blindar-tu-empresa-antes-de-terminar-el-ano.md"
+  },
   {
     title: "Cómo evitar sanciones costosas de la DIAN por errores en facturación electrónica",
     slug: "evitar-sanciones-dian-facturacion-electronica",
@@ -30,20 +39,20 @@ window.BLOG_DATA = [
   }
 ];
 
-// Función para obtener artículos ordenados por fecha descendente
+// FunciÃ³n para obtener artÃ­culos ordenados por fecha descendente
 function getBlogArticles() {
   return [...window.BLOG_DATA].sort((a, b) => new Date(b.date) - new Date(a.date));
 }
 
-// Función para formatear fechas en español
+// FunciÃ³n para formatear fechas en espaÃ±ol
 function formatBlogDate(dateStr) {
   if (!dateStr) return '';
   const parts = dateStr.split('-');
   if (parts.length === 3) {
-    const year = parts[0];
+    const year  = parts[0];
     const month = parseInt(parts[1], 10) - 1;
-    const day = parseInt(parts[2], 10);
-    const date = new Date(year, month, day);
+    const day   = parseInt(parts[2], 10);
+    const date  = new Date(year, month, day);
     return date.toLocaleDateString('es-CO', {
       year: 'numeric',
       month: 'long',
@@ -55,4 +64,4 @@ function formatBlogDate(dateStr) {
 
 // Exportar globalmente
 window.getBlogArticles = getBlogArticles;
-window.formatBlogDate = formatBlogDate;
+window.formatBlogDate  = formatBlogDate;
