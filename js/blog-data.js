@@ -6,6 +6,14 @@
 
 window.BLOG_DATA = [
   {
+    title: "Ley de Rescate Económico y balance del Decreto 1419 de 2026: claves fiscales para empresas en Colombia",
+    slug: "ley-de-rescate-economico-balance-decreto-1419-2026-empresas-colombia",
+    date: "2026-11-24",
+    category: "Impuestos",
+    summary: "Avanza la Ley de Rescate en el Congreso y la DIAN reporta $3,17",
+    file: "content/blog/ley-de-rescate-economico-y-balance-del-decreto-1419-de-2026-claves-fiscales-para-empresas-en-colombia.md"
+  },
+  {
     title: "Bancarización: no pierdas deducciones por pagar en efectivo",
     slug: "bancarizacion-dian-no-pierdas-deducciones-pagar-efectivo",
     date: "2026-11-19",
