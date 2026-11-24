@@ -34,5 +34,4 @@ Haga seguimiento periódico al trámite de la Ley de Rescate Económico para eva
 
 Mantenga soportes completos y trazabilidad de todas sus operaciones comerciales, de nómina y de compras, evitando decisiones apresuradas basadas en versiones no aprobadas.  
 
-
 O contáctanos y revisamos tu caso. 
