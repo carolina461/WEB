@@ -6,6 +6,14 @@
 
 window.BLOG_DATA = [
   {
+    title: "Subsidios de vivienda no están gravados con el impuesto sobre la renta",
+    slug: "dian-reconsidera-doctrina-subsidio-de-vivienda-renta",
+    date: "2026-11-25",
+    category: "DIAN",
+    summary: "DIAN cambia doctrina (Concepto 100202208-2029 de 2026): subsidio de vivienda no es ingreso gravado en renta al no mostrar capacidad contributiva.",
+    file: "content/blog/subsidios-de-vivienda-no-estan-gravados-con-el-impuesto-sobre-la-renta.md"
+  },
+  {
     title: "Ley de Rescate Económico y balance del Decreto 1419 de 2026: claves fiscales para empresas en Colombia",
     slug: "ley-de-rescate-economico-balance-decreto-1419-2026-empresas-colombia",
     date: "2026-11-24",
