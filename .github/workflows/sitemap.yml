@@ -1,11 +1,13 @@
 name: Generar Sitemap Automatico
 
+# NOTA: Deshabilitado en push porque 'Build Blog y Sitemap' (build-blog.yml)
+# ya genera tanto el blog como el sitemap.xml, evitando colisiones de push concurrentes en main.
 on:
-  push:
-    paths:
-      - 'content/blog/**'
-      - '.pages.yml'
   workflow_dispatch:
+
+concurrency:
+  group: blog-build-${{ github.ref }}
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -13,6 +15,8 @@ permissions:
 jobs:
   sitemap:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repositorio
         uses: actions/checkout@v4
@@ -27,4 +31,36 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add sitemap.xml
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-actualizar sitemap.xml con nuevos articulos [skip ci]" && git push)
+          
+          if git diff --staged --quiet; then
+            echo "No hay cambios staged."
+            exit 0
+          fi
+
+          git commit -m "Auto-actualizar sitemap.xml con nuevos articulos [skip ci]"
+
+          max_retries=3
+          count=0
+          pushed=false
+
+          while [ $count -lt $max_retries ]; do
+            count=$((count + 1))
+            echo "Intento de push $count de $max_retries..."
+
+            if git push origin main; then
+              pushed=true
+              break
+            else
+              echo "Push falló. Reintentando con rebase..."
+              if ! git pull --rebase origin main; then
+                git checkout --theirs .
+                git add -A
+                GIT_EDITOR=true git rebase --continue || git rebase --skip || true
+              fi
+            fi
+          done
+
+          if [ "$pushed" = false ]; then
+            echo "Error al hacer push."
+            exit 1
+          fi
